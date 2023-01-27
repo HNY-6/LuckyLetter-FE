@@ -1,15 +1,7 @@
-import styled from "styled-components";
-import background from "../../assets/images/background.png";
+import WrapperBoxStyle from "./WrapperBoxStyle";
 
-const WrapperBox = styled.div`
-  position: relative;
-  padding: 54px 30px;
-  width: 390px;
-  height: 844px;
-  background-image: url(${background});
-  border-radius: 10px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-`;
+const WrapperBox = () => {
+  return <WrapperBoxStyle />;
+};
 
 export default WrapperBox;
