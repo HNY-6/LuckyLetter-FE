@@ -5,7 +5,11 @@ module.exports = {
     {
       plugin: CracoAlias,
       options: {
-        source: "tsconfig",
+        source: "options",
+        baseUrl: "./",
+        aliases: {
+          "@": "./src/",
+        },
       },
     },
   ],
