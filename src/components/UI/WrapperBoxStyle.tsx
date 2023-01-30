@@ -2,6 +2,7 @@ import styled from "styled-components";
 import background from "../../assets/BG.png";
 
 const WrapperBoxStyle = styled.div`
+  padding: 0 30px;
   max-width: 390px;
   width: 100%;
   height: 844px;
