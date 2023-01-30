@@ -5,8 +5,8 @@ import Login from "@/pages/Login";
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />}></Route>
-      <Route path="/login" element={<Login />}></Route>
+      <Route path='/' element={<Home />}></Route>
+      <Route path='/login' element={<Login />}></Route>
     </Routes>
   );
 };

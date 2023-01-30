@@ -113,7 +113,7 @@ const Login = () => {
         <FirstEnteredBox>
           <FirstEnteredText>처음 방문하셨나요?</FirstEnteredText>
           <FirstEnteredButton>
-            <Link to="">회원가입하기</Link>
+            <Link to=''>회원가입하기</Link>
           </FirstEnteredButton>
         </FirstEnteredBox>
       </MainCharacter>
