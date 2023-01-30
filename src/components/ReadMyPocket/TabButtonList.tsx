@@ -14,11 +14,16 @@ const tabMenuTitle = [
   },
 ];
 
-const TabButtonList = () => {
+interface TabButtonListType {
+  getSelectedIndex: (index: number) => void;
+}
+
+const TabButtonList = (props: TabButtonListType) => {
   const [active, setActive] = useState(0);
 
   const activeTabButtonHandler = (index: number): void => {
     setActive(index);
+    props.getSelectedIndex(index);
   };
 
   const tabMenuButtons = tabMenuTitle.map((button, index) => {
