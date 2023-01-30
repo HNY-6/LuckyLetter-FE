@@ -1,4 +1,4 @@
-import WrapperBoxStyle from "@/components/UI/WrapperBoxStyle";
+import WrapperBox from "@/components/UI/WrapperBox";
 import { ReactNode } from "react";
 import styled from "styled-components";
 
@@ -13,7 +13,7 @@ const MainLayout = styled.main`
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <MainLayout>
-      <WrapperBoxStyle>{children}</WrapperBoxStyle>
+      <WrapperBox>{children}</WrapperBox>
     </MainLayout>
   );
 };
