@@ -33,6 +33,7 @@ export const PocketBlueImg = styled(PocketProperty)`
 const MoneyProperty = styled.div`
   width: 100px;
   height: 50px;
+  cursor: pointer;
 `;
 
 export const MoneyDefaultImg = styled(MoneyProperty)`
