@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Home from "@/pages/Home";
 import Login from "@/pages/Login";
 import ReadMyPocket from "@/pages/ReadMyPocket";
+import ReadMyLetter from "@/pages/ReadMyLetter";
 
 const AppRoutes = () => {
   return (
@@ -9,6 +10,7 @@ const AppRoutes = () => {
       <Route path="/" element={<Home />}></Route>
       <Route path="/login" element={<Login />}></Route>
       <Route path="/mypocket" element={<ReadMyPocket />}></Route>
+      <Route path="/mypocket/:myletterId" element={<ReadMyLetter />}></Route>
     </Routes>
   );
 };
