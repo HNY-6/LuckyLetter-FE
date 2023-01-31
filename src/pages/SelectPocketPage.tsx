@@ -34,11 +34,11 @@ const SelectPocketBox = styled.div`
   height: 285px;
   background-image: url(${bgSelectPocket});
   padding: 48px 26.96px 77px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 16.97px;
-  place-items: center;
-  /* gap: 16.97px; */
+  justify-content: center;
+  margin-bottom: 60px;
 `;
 
 const SelectPocketPage = () => {

@@ -5,6 +5,7 @@ import button from "@/assets/btn_sprites.png";
 const PocketProperty = styled.div`
   width: 80px;
   height: 71px;
+  cursor: pointer;
 `;
 
 export const PocketOrangeImg = styled(PocketProperty)`
