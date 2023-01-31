@@ -84,9 +84,12 @@ const kakaoLoginStyle = {
   color: "var(--sub-text-b)",
   backgroundColor: "#FEE500",
   marginTop: "55px",
+  borderRadius: "12px",
 };
 
-const defaultLoginStyle = {};
+const defaultLoginStyle = {
+  borderRadius: "12px",
+};
 
 const Login = () => {
   const navigate = useNavigate();
@@ -113,7 +116,7 @@ const Login = () => {
         <FirstEnteredBox>
           <FirstEnteredText>처음 방문하셨나요?</FirstEnteredText>
           <FirstEnteredButton>
-            <Link to=''>회원가입하기</Link>
+            <Link to="">회원가입하기</Link>
           </FirstEnteredButton>
         </FirstEnteredBox>
       </MainCharacter>
