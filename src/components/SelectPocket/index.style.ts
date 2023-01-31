@@ -4,7 +4,7 @@ import bgSelectPocket from "@/assets/Select_Pocket_BG.png";
 export const SelectPocketWrapper = styled.article`
   display: flex;
   flex-direction: column;
-  padding: 104px 30px 85px;
+  padding: 104px 0px 85px;
 `;
 
 export const SelctPocketTitle = styled.h2`

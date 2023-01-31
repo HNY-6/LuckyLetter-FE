@@ -1,6 +1,4 @@
-import WrapperBox from "@/components/UI/WrapperBox";
 import DefaultButton from "@/components/UI/Button";
-
 import {
   PocketOrangeImg,
   PocketRedImg,
@@ -23,7 +21,7 @@ import {
 
 const SelectPocketPage = () => {
   return (
-    <WrapperBox>
+    <>
       <SelectPocketWrapper>
         <SelctPocketTitle>
           <SelectPocketSpan>복주머니</SelectPocketSpan>와
@@ -45,7 +43,7 @@ const SelectPocketPage = () => {
         </SelectMoneyBox>
         <DefaultButton label={`다음`} />
       </SelectPocketWrapper>
-    </WrapperBox>
+    </>
   );
 };
 
