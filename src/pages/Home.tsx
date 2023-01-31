@@ -44,7 +44,7 @@ const Home = () => {
       <CopyLinkBtn></CopyLinkBtn>
       <SelectMarkImg></SelectMarkImg>
       <ArrowBackBtn></ArrowBackBtn>
-      <Link to='/login'>이동</Link>
+      <Link to="/login">이동</Link>
     </div>
   );
 };
