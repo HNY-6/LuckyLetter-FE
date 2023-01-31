@@ -5,7 +5,7 @@ import {
   PocketRedImg,
   PocketGreenImg,
   PocketBlueImg,
-} from "../button/Button";
+} from "@/components/button/index.style";
 
 interface MyPocketItemType {
   key: number;
