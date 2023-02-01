@@ -24,7 +24,7 @@ const SelectPocketPage = () => {
   return (
     <>
       <SelectPocketWrapper>
-        <ArrowBackBtn></ArrowBackBtn>
+        <ArrowBackBtn />
         <SelctPocketTitle>
           <SelectPocketSpan>복주머니</SelectPocketSpan>와
           <SelectPocketSpan> 세뱃돈</SelectPocketSpan>을<br /> 선택해주세요!
