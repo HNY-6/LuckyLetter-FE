@@ -43,10 +43,10 @@ const LetterBox = styled.div`
     `}
 `;
 
-const LetterContainer = () => {
+const LetterContainer = (props: { color: string }) => {
   return (
-    <LetterBox color="navy">
-      <LetterContent color="navy" />
+    <LetterBox color={props.color}>
+      <LetterContent color={props.color} />
     </LetterBox>
   );
 };
