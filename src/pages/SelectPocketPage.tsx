@@ -10,6 +10,7 @@ import {
   Money10000Img,
   Money50000Img,
   MoneyDefaultImg,
+  ArrowBackBtn,
 } from "@/components/button/index.style";
 import {
   SelctPocketTitle,
@@ -23,6 +24,7 @@ const SelectPocketPage = () => {
   return (
     <>
       <SelectPocketWrapper>
+        <ArrowBackBtn></ArrowBackBtn>
         <SelctPocketTitle>
           <SelectPocketSpan>복주머니</SelectPocketSpan>와
           <SelectPocketSpan> 세뱃돈</SelectPocketSpan>을<br /> 선택해주세요!
