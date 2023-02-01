@@ -40,7 +40,7 @@ const OrText = styled.span`
     content: "";
     position: absolute;
     top: 50%;
-    left: 30px;
+    left: 0px;
     width: 120px;
     background-color: #aaa;
     height: 1px;
@@ -50,7 +50,7 @@ const OrText = styled.span`
     content: "";
     position: absolute;
     top: 50%;
-    right: 30px;
+    right: 0px;
     width: 120px;
     background-color: #aaa;
     height: 1px;
@@ -63,10 +63,8 @@ const FirstEnteredBox = styled.div`
   align-items: center;
   padding-top: 20px;
   gap: 10px;
-
   &:hover {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    transition: all 0.3s ease;
   }
 `;
 const FirstEnteredText = styled.span`
@@ -78,6 +76,9 @@ const FirstEnteredButton = styled.button`
   font-size: 16px;
   color: var(--main-color);
   transition: all 0.3s ease;
+  &:hover {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
 `;
 
 const kakaoLoginStyle = {
@@ -113,7 +114,7 @@ const Login = () => {
         <FirstEnteredBox>
           <FirstEnteredText>처음 방문하셨나요?</FirstEnteredText>
           <FirstEnteredButton>
-            <Link to=''>회원가입하기</Link>
+            <Link to="">회원가입하기</Link>
           </FirstEnteredButton>
         </FirstEnteredBox>
       </MainCharacter>

@@ -19,7 +19,7 @@ import {
   CopyLinkBtn,
   SelectMarkImg,
   ArrowBackBtn,
-} from "@/components/button/Button";
+} from "@/components/button/index.style";
 const Home = () => {
   return (
     <div>
