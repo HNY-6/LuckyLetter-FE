@@ -89,6 +89,8 @@ export const ArrowBackBtn = styled.div`
   width: 32px;
   height: 32px;
   background: url(${button}) -10px -348px;
+  position: absolute;
+  cursor: pointer;
 `;
 
 export const SelectMarkImg = styled.div`

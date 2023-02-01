@@ -4,6 +4,7 @@ import Login from "@/pages/Login";
 import ReadMyPocket from "@/pages/ReadMyPocket";
 import ReadMyLetter from "@/pages/ReadMyLetter";
 import SelectPocketPage from "@/pages/SelectPocketPage";
+import WriteLetterPage from "@/pages/WriteLetterPage";
 
 const AppRoutes = () => {
   return (
@@ -13,6 +14,7 @@ const AppRoutes = () => {
       <Route path='/mypocket' element={<ReadMyPocket />}></Route>
       <Route path='/mypocket/:myletterId' element={<ReadMyLetter />}></Route>
       <Route path='/selectpocket' element={<SelectPocketPage />}></Route>
+      <Route path='/writeletter' element={<WriteLetterPage />}></Route>
     </Routes>
   );
 };
