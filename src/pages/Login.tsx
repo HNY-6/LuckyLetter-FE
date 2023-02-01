@@ -85,12 +85,9 @@ const kakaoLoginStyle = {
   color: "var(--sub-text-b)",
   backgroundColor: "#FEE500",
   marginTop: "55px",
-  borderRadius: "12px",
 };
 
-const defaultLoginStyle = {
-  borderRadius: "12px",
-};
+const defaultLoginStyle = {};
 
 const Login = () => {
   const navigate = useNavigate();

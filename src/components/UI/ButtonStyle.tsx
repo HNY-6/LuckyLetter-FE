@@ -7,7 +7,7 @@ export const DefaultButtonStyle = styled.button<{
   display: block;
   width: 330px;
   height: 50px;
-  border-radius: 3px;
+  border-radius: 12px;
   font-size: 16px;
   color: var(--bg-color);
   background-color: var(--main-color);
