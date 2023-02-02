@@ -2,7 +2,7 @@ import { ArrowBackBtn } from "@/components/button/index.style";
 import {
   SelctPocketTitle,
   SelectPocketSpan,
-  SelectPocketWrapper,
+  SelectPocketForm,
 } from "@/components/SelectPocket/index.style";
 import DefaultButton from "@/components/UI/Button";
 import {
@@ -17,7 +17,7 @@ import {
 const WriteLetterPage = () => {
   return (
     <>
-      <SelectPocketWrapper>
+      <SelectPocketForm>
         <ArrowBackBtn />
         <SelctPocketTitle>
           <SelectPocketSpan>진심을 담은 편지</SelectPocketSpan>를<br />
@@ -32,7 +32,7 @@ const WriteLetterPage = () => {
           <LetterStamp />
         </LetterBox>
         <DefaultButton label={`보내기`} />
-      </SelectPocketWrapper>
+      </SelectPocketForm>
     </>
   );
 };
