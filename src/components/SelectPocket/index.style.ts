@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import bgSelectPocket from "@/assets/Select_Pocket_BG.png";
 
-export const SelectPocketWrapper = styled.article`
+export const SelectPocketForm = styled.form`
   display: flex;
   flex-direction: column;
   padding: 104px 0px 85px;
@@ -21,7 +21,7 @@ export const SelectPocketSpan = styled(SelctPocketTitle)`
   color: var(--main-color);
 `;
 
-export const SelectPocketBox = styled.div`
+export const SelectPocketFieldSet = styled.fieldset`
   width: 330px;
   height: 285px;
   background-image: url(${bgSelectPocket});
@@ -33,7 +33,7 @@ export const SelectPocketBox = styled.div`
   margin-bottom: 60px;
 `;
 
-export const SelectMoneyBox = styled.div`
+export const SelectMoneyFieldSet = styled.fieldset`
   width: 330px;
   display: flex;
   flex-wrap: wrap;
