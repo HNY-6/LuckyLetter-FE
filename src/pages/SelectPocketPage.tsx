@@ -19,8 +19,14 @@ import {
   SelectPocketSpan,
   SelectPocketForm,
 } from "@/components/SelectPocket/index.style";
+import { useNavigate } from "react-router-dom";
 
 const SelectPocketPage = () => {
+  const navigate = useNavigate();
+  const onSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    navigate("/writeletter");
+  };
   return (
     <>
       <SelectPocketForm>
@@ -43,7 +49,7 @@ const SelectPocketPage = () => {
           <Money50000Img></Money50000Img>
           <MoneyDefaultImg></MoneyDefaultImg>
         </SelectMoneyFieldSet>
-        <DefaultButton label={`다음`} />
+        <DefaultButton onClick={onSubmit} label={`다음`} />
       </SelectPocketForm>
     </>
   );
