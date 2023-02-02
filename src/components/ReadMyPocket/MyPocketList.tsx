@@ -24,6 +24,7 @@ const MyPocketList = (props: MyPocketListType) => {
         DUMMY_LIST.map((item) => (
           <MyPocketItem
             key={item.id}
+            id={item.id}
             isRead={item.isRead}
             color={item.color}
             author={item.author}
@@ -33,6 +34,7 @@ const MyPocketList = (props: MyPocketListType) => {
         DUMMY_LIST.filter((item) => item.isRead === true).map((item) => (
           <MyPocketItem
             key={item.id}
+            id={item.id}
             isRead={item.isRead}
             color={item.color}
             author={item.author}
@@ -42,6 +44,7 @@ const MyPocketList = (props: MyPocketListType) => {
         DUMMY_LIST.filter((item) => item.isRead === false).map((item) => (
           <MyPocketItem
             key={item.id}
+            id={item.id}
             isRead={item.isRead}
             color={item.color}
             author={item.author}

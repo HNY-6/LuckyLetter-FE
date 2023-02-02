@@ -7,7 +7,7 @@ const MainLayout = styled.main`
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
 `;
 
 const Layout = ({ children }: { children: ReactNode }) => {
