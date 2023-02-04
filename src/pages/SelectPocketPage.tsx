@@ -28,8 +28,6 @@ import SelectMoney from "@/components/SelectPocket/SelectMoney";
 
 const SelectPocketPage = () => {
   const navigate = useNavigate();
-  const [pocketValue, setPocketValue] = useState("redPocket");
-  const [moneyValue, setMoneyValue] = useState("1000");
   const onSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     navigate("/writeletter");

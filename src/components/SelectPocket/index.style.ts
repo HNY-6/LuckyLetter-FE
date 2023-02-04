@@ -44,7 +44,7 @@ export const SelectMoneyFieldSet = styled.fieldset`
 `;
 
 export const RadioLabel = styled.label``;
-export const RadioPocketInput = styled.input`
+export const RadioInput = styled.input`
   position: absolute;
   left: -9999px;
   &:checked + div:after {
@@ -53,19 +53,13 @@ export const RadioPocketInput = styled.input`
     position: absolute;
     width: 40px;
     height: 40px;
-    top: 2px;
-  }
-`;
-
-export const RadioMoneyInput = styled.input`
-  position: absolute;
-  left: -9999px;
-  &:checked + div:after {
-    content: "";
-    background: url(${button}) -250px -192px;
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 2px;
+    ${(props) => {
+      switch (props.name) {
+        case "selectPocket":
+          return `top: 2px;`;
+        case "selectMoney":
+          return `top: 5px; right: 30px`;
+      }
+    }}
   }
 `;

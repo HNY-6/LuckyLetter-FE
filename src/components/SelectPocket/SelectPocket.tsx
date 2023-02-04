@@ -4,19 +4,15 @@ import { Radio } from "./Radio";
 import { RadioGroup } from "./RadioGroup";
 
 const POCKET_LIST = [
-  { value: "redPocket" },
-  { value: "bluePocket" },
-  { value: "greenPocket" },
-  { value: "yellowPocket" },
-  { value: "orangePocket" },
+  { value: "redPocket", check: true },
+  { value: "bluePocket", check: false },
+  { value: "greenPocket", check: false },
+  { value: "yellowPocket", check: false },
+  { value: "orangePocket", check: false },
 ];
 
 const SelectPocket = () => {
   const [pocketValue, setPocketValue] = useState("redPocket");
-
-  useEffect(() => {
-    console.log(pocketValue);
-  }, [pocketValue]);
 
   return (
     <SelectPocketFieldSet>
@@ -26,7 +22,12 @@ const SelectPocket = () => {
         onChange={setPocketValue}
       >
         {POCKET_LIST.map((item) => (
-          <Radio key={item.value} name='selectPocket' value={item.value} />
+          <Radio
+            key={item.value}
+            name='selectPocket'
+            value={item.value}
+            defaultChecked={item.check}
+          />
         ))}
       </RadioGroup>
     </SelectPocketFieldSet>

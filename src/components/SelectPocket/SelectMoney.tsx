@@ -4,11 +4,11 @@ import { Radio } from "./Radio";
 import { RadioGroup } from "./RadioGroup";
 
 const MONEY_LIST = [
-  { value: "1000won" },
-  { value: "5000won" },
-  { value: "10000won" },
-  { value: "50000won" },
-  { value: "none" },
+  { value: "1000won", check: false },
+  { value: "5000won", check: false },
+  { value: "10000won", check: false },
+  { value: "50000won", check: false },
+  { value: "none", check: true },
 ];
 
 const SelectMoney = () => {
@@ -21,7 +21,12 @@ const SelectMoney = () => {
         onChange={setMoneyValue}
       >
         {MONEY_LIST.map((item) => (
-          <Radio key={item.value} name='selectMoney' value={item.value}></Radio>
+          <Radio
+            key={item.value}
+            name='selectMoney'
+            value={item.value}
+            defaultChecked={item.check}
+          ></Radio>
         ))}
       </RadioGroup>
     </SelectMoneyFieldSet>
