@@ -1,21 +1,7 @@
 import DefaultButton from "@/components/UI/Button";
-import {
-  PocketOrangeImg,
-  PocketRedImg,
-  PocketBlueImg,
-  PocketGreenImg,
-  PocketYellowImg,
-  Money1000Img,
-  Money5000Img,
-  Money10000Img,
-  Money50000Img,
-  MoneyDefaultImg,
-  ArrowBackBtn,
-} from "@/components/button/index.style";
+import { ArrowBackBtn } from "@/components/button/index.style";
 import {
   SelctPocketTitle,
-  SelectMoneyFieldSet,
-  SelectPocketFieldSet,
   SelectPocketSpan,
   SelectPocketForm,
 } from "@/components/SelectPocket/index.style";
@@ -30,17 +16,21 @@ const SelectPocketPage = () => {
   const navigate = useNavigate();
   const onSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    navigate("/writeletter");
     const target = e.target as typeof e.target & {
       selectPocket: { value: string };
       selectMoney: { value: string };
     };
-    console.log(target.selectPocket.value, target.selectMoney.value);
+    navigate("/writeletter", {
+      state: {
+        pocket: `${target.selectPocket.value}`,
+        money: `${target.selectMoney.value}`,
+      },
+    });
   };
   return (
     <>
       <SelectPocketForm onSubmit={onSubmit}>
-        <ArrowBackBtn />
+        <ArrowBackBtn onClick={() => navigate(-1)} />
         <SelctPocketTitle>
           <SelectPocketSpan>복주머니</SelectPocketSpan>와
           <SelectPocketSpan> 세뱃돈</SelectPocketSpan>을<br /> 선택해주세요!

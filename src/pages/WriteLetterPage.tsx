@@ -13,12 +13,24 @@ import {
   LetterStamp,
   ReceiverParagraph,
 } from "@/components/WriteLetter/index.style";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const WriteLetterPage = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const messageColor = location.state.pocket;
+  const money = location.state.money;
+  console.log(messageColor, money);
+
+  const onSubmit = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    try {
+    } catch (error) {}
+  };
   return (
     <>
-      <SelectPocketForm>
-        <ArrowBackBtn />
+      <SelectPocketForm onSubmit={onSubmit}>
+        <ArrowBackBtn onClick={() => navigate(-1)} />
         <SelctPocketTitle>
           <SelectPocketSpan>진심을 담은 편지</SelectPocketSpan>를<br />
           써주세요!
