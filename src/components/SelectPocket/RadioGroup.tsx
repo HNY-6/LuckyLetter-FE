@@ -1,3 +1,4 @@
+import { SelectPocketFieldSet } from "./index.style";
 import RadioContext from "./RadioContext";
 
 interface RadioGroupType {
@@ -9,11 +10,11 @@ interface RadioGroupType {
 
 export const RadioGroup = (props: RadioGroupType) => {
   return (
-    <fieldset>
-      <legend>{props.label}</legend>
+    <SelectPocketFieldSet>
+      <legend className='ir'>{props.label}</legend>
       <RadioContext.Provider value={props.value}>
         {props.children}
       </RadioContext.Provider>
-    </fieldset>
+    </SelectPocketFieldSet>
   );
 };

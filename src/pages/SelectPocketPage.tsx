@@ -48,11 +48,11 @@ const SelectPocketPage = () => {
           <SelectPocketSpan> 세뱃돈</SelectPocketSpan>을<br /> 선택해주세요!
         </SelctPocketTitle>
         <RadioGroup label='복주머니 선택' value={value} onChange={setValue}>
-          <Radio value='redPocket' disabled={false}></Radio>
-          <Radio value='bluePocket' disabled={false}></Radio>
-          <Radio value='greenPocket' disabled={false}></Radio>
-          <Radio value='yellowPocket' disabled={false}></Radio>
-          <Radio value='orangePocket' disabled={false}></Radio>
+          <Radio name='selectPocket' value='redPocket'></Radio>
+          <Radio name='selectPocket' value='bluePocket'></Radio>
+          <Radio name='selectPocket' value='greenPocket'></Radio>
+          <Radio name='selectPocket' value='yellowPocket'></Radio>
+          <Radio name='selectPocket' value='orangePocket'></Radio>
         </RadioGroup>
         {/* <SelectPocketFieldSet>
           <PocketRedImg></PocketRedImg>
