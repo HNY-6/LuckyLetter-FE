@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { SelectPocketFieldSet } from "./index.style";
-import { Radio } from "./Radio";
-import { RadioGroup } from "./RadioGroup";
+import { SelectPocketFieldSet } from "@/components/SelectPocket/index.style";
+import { Radio } from "@/components/SelectPocket/RadioBtn/Radio";
+import { RadioGroup } from "@/components/SelectPocket/RadioBtn/RadioGroup";
 
 const POCKET_LIST = [
   { value: "redPocket", check: true },

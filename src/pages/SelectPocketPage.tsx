@@ -6,9 +6,6 @@ import {
   SelectPocketForm,
 } from "@/components/SelectPocket/index.style";
 import { useNavigate } from "react-router-dom";
-import { Radio } from "@/components/SelectPocket/Radio";
-import { RadioGroup } from "@/components/SelectPocket/RadioGroup";
-import { useState } from "react";
 import SelectPocket from "@/components/SelectPocket/SelectPocket";
 import SelectMoney from "@/components/SelectPocket/SelectMoney";
 

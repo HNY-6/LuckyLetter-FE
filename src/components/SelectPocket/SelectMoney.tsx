@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { SelectMoneyFieldSet } from "./index.style";
-import { Radio } from "./Radio";
-import { RadioGroup } from "./RadioGroup";
+import { SelectMoneyFieldSet } from "@/components/SelectPocket/index.style";
+import { Radio } from "@/components/SelectPocket/RadioBtn/Radio";
+import { RadioGroup } from "@/components/SelectPocket/RadioBtn/RadioGroup";
 
 const MONEY_LIST = [
   { value: "1000won", check: false },

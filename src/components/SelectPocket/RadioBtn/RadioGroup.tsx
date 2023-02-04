@@ -1,4 +1,4 @@
-import { SelectPocketFieldSet } from "./index.style";
+import { SelectPocketFieldSet } from "@/components/SelectPocket/index.style";
 import RadioContext from "./RadioContext";
 
 interface RadioGroupType {

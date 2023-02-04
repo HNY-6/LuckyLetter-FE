@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import RadioContext from "./RadioContext";
+import RadioContext from "../RadioBtn/RadioContext";
 import { MoneyProperty, PocketProperty } from "@/components/button/index.style";
-import { RadioInput, RadioLabel } from "./index.style";
+import { RadioInput, RadioLabel } from "../index.style";
 
 interface SelectPocketType {
   value: string;
