@@ -49,7 +49,6 @@ const SelectPocketPage = () => {
         </SelctPocketTitle>
         <SelectPocket />
         <SelectMoney />
-
         <DefaultButton label={`다음`} />
       </SelectPocketForm>
     </>
