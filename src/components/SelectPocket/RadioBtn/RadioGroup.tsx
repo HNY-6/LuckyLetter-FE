@@ -5,7 +5,7 @@ interface RadioGroupType {
   label: string;
   children: any;
   value: string;
-  onChange: any;
+  onChange: Function;
 }
 
 export const RadioGroup = (props: RadioGroupType) => {
