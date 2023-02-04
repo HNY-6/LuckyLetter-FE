@@ -1,23 +1,13 @@
 import PageDescParagraph from "@/components/UI/PageDescParagraph";
-import TabButtonList from "@/components/ReadMyPocket/TabButtonList";
-import MyPocketList from "@/components/ReadMyPocket/MyPocketList";
-import { useState } from "react";
+import TabMenu from "@/components/ReadMyPocket/TabMenu";
 
 const ReadMyPocket = () => {
-  const [selectedIndex, setSelectedIndex] = useState(0);
-
-  const selectTabButtonHandler = (index: number) => {
-    setSelectedIndex(index);
-  };
-
   return (
     <>
       <PageDescParagraph>받은 복주머니</PageDescParagraph>
-      {/* 탭 메뉴 컴포넌트 */}
-      <TabButtonList getSelectedIndex={selectTabButtonHandler} />
-      {/* 받은 복주머니 데이터 리스트 */}
-      <MyPocketList selectedIndex={selectedIndex} />
-      {/* 페이지네이션 버튼 */}
+      {/* 탭 메뉴와 받은 복주머니 리스트 컴포넌트 */}
+      <TabMenu />
+      {/* 페이지네이션 버튼 - 쿼리로 추가 예정 */}
     </>
   );
 };
