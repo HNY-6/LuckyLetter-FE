@@ -23,52 +23,34 @@ import { useNavigate } from "react-router-dom";
 import { Radio } from "@/components/SelectPocket/Radio";
 import { RadioGroup } from "@/components/SelectPocket/RadioGroup";
 import { useState } from "react";
-
-const POCKET_LIST = [
-  { name: "pocket", value: "redpocket" },
-  { name: "pocket", value: "bluepocket" },
-  { name: "pocket", value: "greenpocket" },
-  { name: "pocket", value: "yellopocket" },
-  { name: "pocket", value: "orangepocket" },
-];
+import SelectPocket from "@/components/SelectPocket/SelectPocket";
+import SelectMoney from "@/components/SelectPocket/SelectMoney";
 
 const SelectPocketPage = () => {
   const navigate = useNavigate();
-  const [value, setValue] = useState("redPocket");
-  const onSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
+  const [pocketValue, setPocketValue] = useState("redPocket");
+  const [moneyValue, setMoneyValue] = useState("1000");
+  const onSubmit = (e: React.SyntheticEvent) => {
+    e.preventDefault();
     navigate("/writeletter");
+    const target = e.target as typeof e.target & {
+      selectPocket: { value: string };
+      selectMoney: { value: string };
+    };
+    console.log(target.selectPocket.value, target.selectMoney.value);
   };
   return (
     <>
-      <SelectPocketForm>
+      <SelectPocketForm onSubmit={onSubmit}>
         <ArrowBackBtn />
         <SelctPocketTitle>
           <SelectPocketSpan>복주머니</SelectPocketSpan>와
           <SelectPocketSpan> 세뱃돈</SelectPocketSpan>을<br /> 선택해주세요!
         </SelctPocketTitle>
-        <RadioGroup label='복주머니 선택' value={value} onChange={setValue}>
-          <Radio name='selectPocket' value='redPocket'></Radio>
-          <Radio name='selectPocket' value='bluePocket'></Radio>
-          <Radio name='selectPocket' value='greenPocket'></Radio>
-          <Radio name='selectPocket' value='yellowPocket'></Radio>
-          <Radio name='selectPocket' value='orangePocket'></Radio>
-        </RadioGroup>
-        {/* <SelectPocketFieldSet>
-          <PocketRedImg></PocketRedImg>
-          <PocketBlueImg></PocketBlueImg>
-          <PocketGreenImg></PocketGreenImg>
-          <PocketYellowImg></PocketYellowImg>
-          <PocketOrangeImg></PocketOrangeImg>
-        </SelectPocketFieldSet>
-        <SelectMoneyFieldSet>
-          <Money1000Img></Money1000Img>
-          <Money5000Img></Money5000Img>
-          <Money10000Img></Money10000Img>
-          <Money50000Img></Money50000Img>
-          <MoneyDefaultImg></MoneyDefaultImg>
-        </SelectMoneyFieldSet> */}
-        <DefaultButton onClick={onSubmit} label={`다음`} />
+        <SelectPocket />
+        <SelectMoney />
+
+        <DefaultButton label={`다음`} />
       </SelectPocketForm>
     </>
   );
