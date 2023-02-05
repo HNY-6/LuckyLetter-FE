@@ -1,5 +1,5 @@
-import { SelectPocketFieldSet } from "@/components/SelectPocket/index.style";
-import RadioContext from "./RadioContext";
+import { SelectPocketFieldSet } from '@/components/SelectPocket/index.style';
+import RadioContext from './RadioContext';
 
 interface RadioGroupType {
   label: string;
@@ -11,7 +11,7 @@ interface RadioGroupType {
 export const RadioGroup = (props: RadioGroupType) => {
   return (
     <>
-      <legend className='ir'>{props.label}</legend>
+      <legend className="ir">{props.label}</legend>
       <RadioContext.Provider value={props.value}>
         {props.children}
       </RadioContext.Provider>

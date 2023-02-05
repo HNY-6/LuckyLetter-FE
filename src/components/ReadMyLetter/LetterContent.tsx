@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // 발도장 이미지 스프라이트
 import {
@@ -7,7 +7,7 @@ import {
   DogOrangeStampImg,
   DogGreenStampImg,
   DogYellowStampImg,
-} from "@/components/button/index.style";
+} from '@/components/button/index.style';
 
 const LetterGridBox = styled.div`
   display: grid;
@@ -56,11 +56,11 @@ const LetterContent = ({ color }: { color: string }) => {
       </LetterContentParagraph>
       <LetterFromParagraph color={color}>
         From.<span>(발신자)</span>
-        {color === "red" && <DogRedStampImg />}
-        {color === "orange" && <DogOrangeStampImg />}
-        {color === "yellow" && <DogYellowStampImg />}
-        {color === "green" && <DogGreenStampImg />}
-        {color === "navy" && <DogWhiteStampImg />}
+        {color === 'red' && <DogRedStampImg />}
+        {color === 'orange' && <DogOrangeStampImg />}
+        {color === 'yellow' && <DogYellowStampImg />}
+        {color === 'green' && <DogGreenStampImg />}
+        {color === 'navy' && <DogWhiteStampImg />}
       </LetterFromParagraph>
     </LetterGridBox>
   );

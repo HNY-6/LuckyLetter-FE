@@ -1,4 +1,4 @@
-import styled, { CSSProperties } from "styled-components";
+import styled, { CSSProperties } from 'styled-components';
 
 export const DefaultButtonStyle = styled.button<{
   styleOverrides?: CSSProperties;

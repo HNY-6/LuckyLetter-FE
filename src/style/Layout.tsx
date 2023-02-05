@@ -1,6 +1,6 @@
-import WrapperBox from "@/components/UI/WrapperBox";
-import { ReactNode } from "react";
-import styled from "styled-components";
+import WrapperBox from '@/components/UI/WrapperBox';
+import { ReactNode } from 'react';
+import styled from 'styled-components';
 
 const MainLayout = styled.main`
   width: 100%;

@@ -1,6 +1,6 @@
-import { DogYellowStampImg } from "./../button/index.style";
-import styled from "styled-components";
-import yellorLetter from "@/assets/letter-yellow_bg.png";
+import { DogYellowStampImg } from './../button/index.style';
+import styled from 'styled-components';
+import yellorLetter from '@/assets/letter-yellow_bg.png';
 
 export const LetterBox = styled.div`
   width: 330px;
@@ -11,7 +11,7 @@ export const LetterBox = styled.div`
 `;
 
 export const ReceiverParagraph = styled.p`
-  font-family: "Pretendard Variable";
+  font-family: 'Pretendard Variable';
   font-size: 18px;
   font-weight: 700;
   line-height: 21px;
@@ -22,7 +22,7 @@ export const ReceiverParagraph = styled.p`
 export const LetterContentParagraph = styled.textarea`
   width: 270px;
   height: 176px;
-  font-family: "Pretendard Variable";
+  font-family: 'Pretendard Variable';
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -38,7 +38,7 @@ export const LetterStamp = styled(DogYellowStampImg)`
 
 export const LetterSenderParagraph = styled.p`
   display: inline-block;
-  font-family: "Pretendard Variable";
+  font-family: 'Pretendard Variable';
   font-size: 12px;
   font-weight: 700;
   line-height: 14.32px;

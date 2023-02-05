@@ -47,20 +47,19 @@ const Home = () => {
           <br />총 25,000원 입니다!
         </HomeTextBox>
         <BtnBox>
-          <CopyLinkBtn as='button' />
-          <LogoutBtn as='button' />
+          <CopyLinkBtn as="button" />
+          <LogoutBtn as="button" />
         </BtnBox>
       </HomeDisplayBox>
-      <MainBackgroundImg src={homeBG} alt='메인 이미지' />
+      <MainBackgroundImg src={homeBG} alt="메인 이미지" />
       <DefaultButton
-        label='받은 복주머니 보러가기'
+        label="받은 복주머니 보러가기"
         styleOverrides={{
           marginTop: '42px',
-        }}
-      ></DefaultButton>
+        }}></DefaultButton>
       <BtnTextBox>복주머니 보내기를 연습해보세요! 🐰</BtnTextBox>
       <DefaultButton
-        label='달토끼에게 복주머니 보내기'
+        label="달토끼에게 복주머니 보내기"
         icon={
           <DefaultIconStyle
             src={homeMoonIcon}

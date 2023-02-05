@@ -2,7 +2,7 @@ import {
   ValidationInputStyle,
   ValidationLabelStyle,
   ValidationTextStyle,
-} from "./InputStyle";
+} from './InputStyle';
 
 interface Props {
   label: string;
