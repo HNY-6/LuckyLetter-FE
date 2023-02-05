@@ -1,6 +1,6 @@
 import { DogYellowStampImg } from "./../button/index.style";
 import styled from "styled-components";
-import yellorLetter from "@/assets/Pocket_Yellow_letter.png";
+import yellorLetter from "@/assets/letter-yellow_bg.png";
 
 export const LetterBox = styled.div`
   width: 330px;

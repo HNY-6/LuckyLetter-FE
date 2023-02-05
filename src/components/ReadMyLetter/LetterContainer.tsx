@@ -2,11 +2,11 @@ import styled, { css } from "styled-components";
 
 import LetterContent from "./LetterContent";
 
-import RedLetterBackground from "@/assets/Pocket_Red_letter.png";
-import OrangeLetterBackground from "@/assets/Pocket_Orange_letter.png";
-import YellowLetterBackground from "@/assets/Pocket_Yellow_letter.png";
-import GreenLetterBackground from "@/assets/Pocket_Green_letter.png";
-import NavyLetterBackground from "@/assets/Pocket_Navy_letter.png";
+import RedLetterBackground from "@/assets/letter-red_bg.png";
+import OrangeLetterBackground from "@/assets/letter-orange_bg.png";
+import YellowLetterBackground from "@/assets/letter-yellow_bg.png";
+import GreenLetterBackground from "@/assets/letter-green_bg.png";
+import NavyLetterBackground from "@/assets/letter-navy_bg.png";
 
 const LetterBox = styled.div`
   margin-bottom: 57px;
