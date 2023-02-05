@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { CSSProperties } from 'styled-components';
 
 export const ValidationLabelStyle = styled.label`
   display: block;
@@ -28,6 +28,12 @@ export const ValidationTextStyle = styled.strong`
   font-weight: bold;
   font-size: 16px;
   font-family: 'Pretendard';
+`;
+
+export const ValidationWarningTextStyle = styled.strong`
+  font-weight: bold;
+  font-size: 16px;
+  font-family: 'Pretendard';
 
   &::after {
     content: '*';
@@ -35,9 +41,13 @@ export const ValidationTextStyle = styled.strong`
   }
 `;
 
-export const ValidationErrorTextStyle = styled.div`
+export const ValidationErrorTextStyle = styled.div<{
+  styleOverrides?: CSSProperties;
+}>`
   color: var(--warning-color);
   font-size: 14px;
   margin-top: 5px;
   padding-left: 2px;
+  word-break: keep-all;
+  ${({ styleOverrides }) => ({ ...styleOverrides })};
 `;

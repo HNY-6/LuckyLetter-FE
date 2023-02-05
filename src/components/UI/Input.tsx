@@ -1,22 +1,40 @@
+import { CSSProperties } from 'styled-components';
 import {
   ValidationErrorTextStyle,
   ValidationInputStyle,
   ValidationLabelStyle,
   ValidationTextStyle,
+  ValidationWarningTextStyle,
 } from './InputStyle';
 
 interface Props {
   label: string;
   placeholder?: string;
   errorMessage?: string;
+  styleOverrides?: CSSProperties;
+  asterisk: boolean;
 }
 
-const ValidationInput = ({ label, placeholder, errorMessage }: Props) => {
+const ValidationInput = ({
+  label,
+  placeholder,
+  errorMessage,
+  styleOverrides,
+  asterisk,
+}: Props) => {
+  console.log(asterisk);
+
   return (
     <ValidationLabelStyle>
-      <ValidationTextStyle>{label}</ValidationTextStyle>
+      {asterisk ? (
+        <ValidationWarningTextStyle>{label}</ValidationWarningTextStyle>
+      ) : (
+        <ValidationTextStyle>{label}</ValidationTextStyle>
+      )}
       <ValidationInputStyle placeholder={placeholder} />
-      <ValidationErrorTextStyle>{errorMessage}</ValidationErrorTextStyle>
+      <ValidationErrorTextStyle styleOverrides={styleOverrides}>
+        {errorMessage}
+      </ValidationErrorTextStyle>
     </ValidationLabelStyle>
   );
 };
