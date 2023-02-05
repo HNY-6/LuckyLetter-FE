@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import bgSelectPocket from "@/assets/Select_Pocket_BG.png";
+import button from "@/assets/btn_sprites.png";
 
 export const SelectPocketForm = styled.form`
   display: flex;
@@ -8,7 +9,7 @@ export const SelectPocketForm = styled.form`
   padding: 104px 0px 85px;
 `;
 
-export const SelctPocketTitle = styled.h2`
+export const SelctPocketTitle = styled.span`
   font-family: "Pretendard";
   font-weight: bold;
   font-size: 25px;
@@ -40,4 +41,25 @@ export const SelectMoneyFieldSet = styled.fieldset`
   flex-wrap: wrap;
   gap: 15px;
   margin-bottom: 45px;
+`;
+
+export const RadioLabel = styled.label``;
+export const RadioInput = styled.input`
+  position: absolute;
+  left: -9999px;
+  &:checked + div:after {
+    content: "";
+    background: url(${button}) -250px -192px;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    ${(props) => {
+      switch (props.name) {
+        case "selectPocket":
+          return `top: 2px;`;
+        case "selectMoney":
+          return `top: 5px; right: 30px`;
+      }
+    }}
+  }
 `;

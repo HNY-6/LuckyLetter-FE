@@ -1,55 +1,40 @@
 import DefaultButton from "@/components/UI/Button";
-import {
-  PocketOrangeImg,
-  PocketRedImg,
-  PocketBlueImg,
-  PocketGreenImg,
-  PocketYellowImg,
-  Money1000Img,
-  Money5000Img,
-  Money10000Img,
-  Money50000Img,
-  MoneyDefaultImg,
-  ArrowBackBtn,
-} from "@/components/button/index.style";
+import { ArrowBackBtn } from "@/components/button/index.style";
 import {
   SelctPocketTitle,
-  SelectMoneyFieldSet,
-  SelectPocketFieldSet,
   SelectPocketSpan,
   SelectPocketForm,
 } from "@/components/SelectPocket/index.style";
 import { useNavigate } from "react-router-dom";
+import SelectPocket from "@/components/SelectPocket/SelectPocket";
+import SelectMoney from "@/components/SelectPocket/SelectMoney";
 
 const SelectPocketPage = () => {
   const navigate = useNavigate();
-  const onSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    navigate("/writeletter");
+  const onSubmit = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    const target = e.target as typeof e.target & {
+      selectPocket: { value: string };
+      selectMoney: { value: string };
+    };
+    navigate("/writeletter", {
+      state: {
+        pocket: `${target.selectPocket.value}`,
+        money: `${target.selectMoney.value}`,
+      },
+    });
   };
   return (
     <>
-      <SelectPocketForm>
-        <ArrowBackBtn />
+      <SelectPocketForm onSubmit={onSubmit}>
+        <ArrowBackBtn onClick={() => navigate(-1)} />
         <SelctPocketTitle>
           <SelectPocketSpan>복주머니</SelectPocketSpan>와
           <SelectPocketSpan> 세뱃돈</SelectPocketSpan>을<br /> 선택해주세요!
         </SelctPocketTitle>
-        <SelectPocketFieldSet>
-          <PocketRedImg></PocketRedImg>
-          <PocketBlueImg></PocketBlueImg>
-          <PocketGreenImg></PocketGreenImg>
-          <PocketYellowImg></PocketYellowImg>
-          <PocketOrangeImg></PocketOrangeImg>
-        </SelectPocketFieldSet>
-        <SelectMoneyFieldSet>
-          <Money1000Img></Money1000Img>
-          <Money5000Img></Money5000Img>
-          <Money10000Img></Money10000Img>
-          <Money50000Img></Money50000Img>
-          <MoneyDefaultImg></MoneyDefaultImg>
-        </SelectMoneyFieldSet>
-        <DefaultButton onClick={onSubmit} label={`다음`} />
+        <SelectPocket />
+        <SelectMoney />
+        <DefaultButton label={`다음`} />
       </SelectPocketForm>
     </>
   );

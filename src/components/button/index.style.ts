@@ -2,10 +2,25 @@ import styled from "styled-components";
 import button from "@/assets/btn_sprites.png";
 
 // Pocket
-const PocketProperty = styled.div`
+export const PocketProperty = styled.div`
   width: 80px;
   height: 71px;
   cursor: pointer;
+  position: relative;
+  ${(props) => {
+    switch (props.color) {
+      case "redPocket":
+        return `background: url(${button}) -10px -101px`;
+      case "bluePocket":
+        return `background: url(${button}) -210px -10px`;
+      case "greenPocket":
+        return `background: url(${button}) -110px -101px`;
+      case "yellowPocket":
+        return `background: url(${button}) -110px -10px;`;
+      case "orangePocket":
+        return `background: url(${button}) -10px -10px;`;
+    }
+  }}
 `;
 
 export const PocketOrangeImg = styled(PocketProperty)`
@@ -30,10 +45,25 @@ export const PocketBlueImg = styled(PocketProperty)`
 
 // Money
 
-const MoneyProperty = styled.div`
+export const MoneyProperty = styled.div`
   width: 100px;
   height: 50px;
   cursor: pointer;
+  position: relative;
+  ${(props) => {
+    switch (props.color) {
+      case "1000won":
+        return `background: url(${button}) -310px -150px`;
+      case "5000won":
+        return `background: url(${button}) -310px -80px`;
+      case "10000won":
+        return `background: url(${button}) -130px -192px`;
+      case "50000won":
+        return `background: url(${button}) -310px -10px`;
+      case "none":
+        return `background: url(${button}) -10px -192px`;
+    }
+  }}
 `;
 
 export const MoneyDefaultImg = styled(MoneyProperty)`
