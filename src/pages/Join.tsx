@@ -1,7 +1,7 @@
-import ValidationInput from '@/components/UI/Input';
-import styled from 'styled-components';
-import TitleLogo from '@/assets/Title.png';
-import DefaultButton from '@/components/UI/Button';
+import ValidationInput from "@/components/UI/Input";
+import styled from "styled-components";
+import TitleLogo from "@/assets/common-title.png";
+import DefaultButton from "@/components/UI/Button";
 
 const MainCharacter = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ const TitleImg = styled.img`
 `;
 
 const joinLoginStyle = {
-  marginTop: '60px',
+  marginTop: "60px",
 };
 
 const Join = () => {
@@ -27,12 +27,12 @@ const Join = () => {
       <MainCharacter>
         <TitleImg src={TitleLogo} />
       </MainCharacter>
-      <ValidationInput label={'이름'} />
-      <ValidationInput label={'이메일'} />
-      <ValidationInput label={'비밀번호'} />
-      <ValidationInput label={'비밀번호 확인'} />
+      <ValidationInput label={"이름"} />
+      <ValidationInput label={"이메일"} />
+      <ValidationInput label={"비밀번호"} />
+      <ValidationInput label={"비밀번호 확인"} />
 
-      <DefaultButton styleOverrides={joinLoginStyle} label={'회원가입'} />
+      <DefaultButton styleOverrides={joinLoginStyle} label={"회원가입"} />
     </>
   );
 };
