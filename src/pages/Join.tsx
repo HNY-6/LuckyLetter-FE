@@ -27,10 +27,27 @@ const Join = () => {
       <MainCharacter>
         <TitleImg src={TitleLogo} />
       </MainCharacter>
-      <ValidationInput label={'이름'} />
-      <ValidationInput label={'이메일'} />
-      <ValidationInput label={'비밀번호'} />
-      <ValidationInput label={'비밀번호 확인'} />
+      <ValidationInput
+        label={'이름'}
+        placeholder={'이름'}
+        errorMessage={'에러메시지 테스트'}
+        asterisk={true}
+      />
+      <ValidationInput
+        label={'이메일'}
+        placeholder={'example@example.com'}
+        asterisk={true}
+      />
+      <ValidationInput
+        label={'비밀번호'}
+        placeholder={'********'}
+        asterisk={true}
+      />
+      <ValidationInput
+        label={'비밀번호 확인'}
+        placeholder={'********'}
+        asterisk={true}
+      />
 
       <DefaultButton styleOverrides={joinLoginStyle} label={'회원가입'} />
     </>
