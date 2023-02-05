@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import background from "../../assets/BG.png";
+import background from "@/assets/common-bg.png";
 
 const WrapperBoxStyle = styled.div`
   padding: 0 30px;

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import bgSelectPocket from "@/assets/Select_Pocket_BG.png";
-import button from "@/assets/btn_sprites.png";
+import bgSelectPocket from "@/assets/pocket-select-box-bg.png";
+import button from "@/assets/common-btn_sprites.png";
 
 export const SelectPocketForm = styled.form`
   display: flex;

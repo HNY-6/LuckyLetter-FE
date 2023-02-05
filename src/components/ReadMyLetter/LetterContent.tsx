@@ -1,7 +1,13 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 // 발도장 이미지 스프라이트
-import FootPaintingImage from "@/assets/foot-painting-each-color.png";
+import {
+  DogRedStampImg,
+  DogWhiteStampImg,
+  DogOrangeStampImg,
+  DogGreenStampImg,
+  DogYellowStampImg,
+} from "@/components/button/index.style";
 
 const LetterGridBox = styled.div`
   display: grid;
@@ -36,45 +42,9 @@ const LetterFromParagraph = styled.p`
   & span {
     font-size: 14px;
   }
-
-  &::after {
-    display: inline-block;
-    content: "";
-    width: 42px;
-    height: 42px;
-    background-image: url(${FootPaintingImage});
-    background-repeat: no-repeat;
-
-    // props인 color를 전달받아 설정한 발도장 이미지 렌더링
-    ${(props) =>
-      props.color === "red" &&
-      css`
-        background-position: 0 0;
-      `}
-    ${(props) =>
-      props.color === "navy" &&
-      css`
-        background-position: -42px 0;
-      `}
-    ${(props) =>
-      props.color === "orange" &&
-      css`
-        background-position: -84px 0;
-      `}
-    ${(props) =>
-      props.color === "green" &&
-      css`
-        background-position: -126px 0;
-      `}
-    ${(props) =>
-      props.color === "yellow" &&
-      css`
-        background-position: -168px 0;
-      `}
-  }
 `;
 
-const LetterContent = (props: { color: string }) => {
+const LetterContent = ({ color }: { color: string }) => {
   return (
     <LetterGridBox>
       <LetterToParagraph>To.(수신자)에게</LetterToParagraph>
@@ -84,8 +54,13 @@ const LetterContent = (props: { color: string }) => {
         cumque possimus porro veniam voluptate ea consequatur perspiciatis illo
         nesciunt hic! Ipsum?
       </LetterContentParagraph>
-      <LetterFromParagraph color={props.color}>
+      <LetterFromParagraph color={color}>
         From.<span>(발신자)</span>
+        {color === "red" && <DogRedStampImg />}
+        {color === "orange" && <DogOrangeStampImg />}
+        {color === "yellow" && <DogYellowStampImg />}
+        {color === "green" && <DogGreenStampImg />}
+        {color === "navy" && <DogWhiteStampImg />}
       </LetterFromParagraph>
     </LetterGridBox>
   );

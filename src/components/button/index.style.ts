@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import button from "@/assets/btn_sprites.png";
+import button from "@/assets/common-btn_sprites.png";
 
 // Pocket
 export const PocketProperty = styled.div`
