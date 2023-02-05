@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import mainCharacter from '@/assets/main_character.png';
-import loginRabbitIcon from '@/assets/icon-park-solid_rabbit.png';
-import loginKaKaoIcon from '@/assets/kakao_icon.png';
-import DefaultButton from '@/components/UI/Button';
-import DefaultIconStyle from '@/style/DefaultIconStyle';
-import { Link, useNavigate } from 'react-router-dom';
+import styled from "styled-components";
+import mainCharacter from "@/assets/common-character.png";
+import loginRabbitIcon from "@/assets/icon-rabbit.png";
+import loginKaKaoIcon from "@/assets/icon-kakao_logo.png";
+import DefaultButton from "@/components/UI/Button";
+import DefaultIconStyle from "@/style/DefaultIconStyle";
+import { Link, useNavigate } from "react-router-dom";
 
 const MainCharacter = styled.div`
   display: flex;
@@ -37,7 +37,7 @@ const OrText = styled.span`
   color: #9e9e9e;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 0px;
@@ -47,7 +47,7 @@ const OrText = styled.span`
   }
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     right: 0px;
@@ -82,9 +82,9 @@ const FirstEnteredButton = styled.button`
 `;
 
 const kakaoLoginStyle = {
-  color: 'var(--sub-text-b)',
-  backgroundColor: '#FEE500',
-  marginTop: '55px',
+  color: "var(--sub-text-b)",
+  backgroundColor: "#FEE500",
+  marginTop: "55px",
 };
 
 const defaultLoginStyle = {};
@@ -106,7 +106,7 @@ const SelectLogin = () => {
           <DefaultButton
             styleOverrides={defaultLoginStyle}
             onClick={() => {
-              navigate('/auth/login');
+              navigate("/auth/login");
             }}
             label={`기존 계정으로 로그인`}
             icon={<DefaultIconStyle src={loginRabbitIcon} />}
