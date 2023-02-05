@@ -1,6 +1,6 @@
-import { CSSProperties } from "styled-components";
-import { DefaultButtonStyle } from "./ButtonStyle";
-import { ReactNode } from "react";
+import { CSSProperties } from 'styled-components';
+import { DefaultButtonStyle } from './ButtonStyle';
+import { ReactNode } from 'react';
 
 interface Props {
   label: string;

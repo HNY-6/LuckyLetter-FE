@@ -1,51 +1,76 @@
-import { Link } from "react-router-dom";
-import {
-  PocketOrangeImg,
-  PocketBlueImg,
-  PocketGreenImg,
-  PocketRedImg,
-  PocketYellowImg,
-  Money1000Img,
-  MoneyDefaultImg,
-  Money5000Img,
-  Money10000Img,
-  Money50000Img,
-  DogGreenStampImg,
-  DogRedStampImg,
-  DogWhiteStampImg,
-  DogOrangeStampImg,
-  DogYellowStampImg,
-  LogoutBtn,
-  CopyLinkBtn,
-  SelectMarkImg,
-  ArrowBackBtn,
-} from "@/components/button/index.style";
+import { Link } from 'react-router-dom';
+import { LogoutBtn, CopyLinkBtn } from '@/components/button/index.style';
+import mainBG from '@/assets/main-BG.png';
+import styled from 'styled-components';
+import DefaultButton from '@/components/UI/Button';
+import DefaultIconStyle from '@/style/DefaultIconStyle';
+import homeMoonIcon from '@/assets/ph_moon-stars-fill.png';
+
+// 홈화면 토끼 이미지 부분
+const MainBackgroundImg = styled.img`
+  width: 330px;
+  height: 330px;
+`;
+
+const BtnTextBox = styled.div`
+  font-size: 15px;
+  color: black;
+  margin: 20px 0;
+  text-align: center;
+`;
+
+// 받은 세뱃돈 표시, 링크복사-로그아웃 버튼 영역
+const HomeDisplayBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 104px;
+  margin-bottom: 33px;
+  padding: 0;
+`;
+const HomeTextBox = styled.div`
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 26.25px;
+`;
+const BtnBox = styled.div`
+  display: flex;
+`;
+
 const Home = () => {
   return (
-    <div>
-      <h2>Home</h2>
-      <p>임시로 만들어둔 페이지입니다.</p>
-      <PocketOrangeImg></PocketOrangeImg>
-      <PocketBlueImg></PocketBlueImg>
-      <PocketGreenImg></PocketGreenImg>
-      <PocketRedImg></PocketRedImg>
-      <PocketYellowImg></PocketYellowImg>
-      <MoneyDefaultImg></MoneyDefaultImg>
-      <Money1000Img></Money1000Img>
-      <Money5000Img></Money5000Img>
-      <Money10000Img></Money10000Img>
-      <Money50000Img></Money50000Img>
-      <DogGreenStampImg></DogGreenStampImg>
-      <DogYellowStampImg></DogYellowStampImg>
-      <DogOrangeStampImg></DogOrangeStampImg>
-      <DogWhiteStampImg></DogWhiteStampImg>
-      <DogRedStampImg></DogRedStampImg>
-      <LogoutBtn></LogoutBtn>
-      <CopyLinkBtn></CopyLinkBtn>
-      <SelectMarkImg></SelectMarkImg>
-      <ArrowBackBtn></ArrowBackBtn>
-      <Link to="/login">이동</Link>
-    </div>
+    <>
+      <HomeDisplayBox>
+        <HomeTextBox>
+          신현우님!
+          <br />
+          받은 세뱃돈은
+          <br />총 25,000원 입니다!
+        </HomeTextBox>
+        <BtnBox>
+          <CopyLinkBtn as='button' />
+          <LogoutBtn as='button' />
+        </BtnBox>
+      </HomeDisplayBox>
+      <MainBackgroundImg src={mainBG} alt='메인 이미지' />
+      <DefaultButton
+        label='받은 복주머니 보러가기'
+        styleOverrides={{
+          marginTop: '42px',
+        }}
+      ></DefaultButton>
+      <BtnTextBox>복주머니 보내기를 연습해보세요! 🐰</BtnTextBox>
+      <DefaultButton
+        label='달토끼에게 복주머니 보내기'
+        icon={
+          <DefaultIconStyle
+            src={homeMoonIcon}
+            styleOverrides={{
+              left: '45px',
+            }}
+          />
+        }
+      />
+    </>
   );
 };
 
