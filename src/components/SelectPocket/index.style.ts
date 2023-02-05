@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import bgSelectPocket from "@/assets/pocket-select-box-bg.png";
-import button from "@/assets/common-btn_sprites.png";
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import bgSelectPocket from '@/assets/pocket-select-box-bg.png';
+import button from '@/assets/common-btn_sprites.png';
 
 export const SelectPocketForm = styled.form`
   display: flex;
@@ -10,7 +10,7 @@ export const SelectPocketForm = styled.form`
 `;
 
 export const SelctPocketTitle = styled.span`
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-weight: bold;
   font-size: 25px;
   line-height: 1.2;
@@ -48,16 +48,16 @@ export const RadioInput = styled.input`
   position: absolute;
   left: -9999px;
   &:checked + div:after {
-    content: "";
+    content: '';
     background: url(${button}) -250px -192px;
     position: absolute;
     width: 40px;
     height: 40px;
     ${(props) => {
       switch (props.name) {
-        case "selectPocket":
+        case 'selectPocket':
           return `top: 2px;`;
-        case "selectMoney":
+        case 'selectMoney':
           return `top: 5px; right: 30px`;
       }
     }}

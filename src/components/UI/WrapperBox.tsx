@@ -1,4 +1,4 @@
-import WrapperBoxStyle from "./WrapperBoxStyle";
+import WrapperBoxStyle from './WrapperBoxStyle';
 
 interface GlobalLayoutProps {
   children?: React.ReactNode;

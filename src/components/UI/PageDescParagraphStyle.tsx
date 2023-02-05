@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const PageDescParagraphStyle = styled.p`
   margin-top: 104px;

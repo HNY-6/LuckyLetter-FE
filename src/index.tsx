@@ -1,9 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
-import App from "./App";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
+import App from './App';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -77,7 +77,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+  document.getElementById('root') as HTMLElement
 );
 
 root.render(

@@ -1,5 +1,5 @@
-import PageDescParagraph from "@/components/UI/PageDescParagraph";
-import TabMenu from "@/components/ReadMyPocket/TabMenu";
+import PageDescParagraph from '@/components/UI/PageDescParagraph';
+import TabMenu from '@/components/ReadMyPocket/TabMenu';
 
 const ReadMyPocket = () => {
   return (

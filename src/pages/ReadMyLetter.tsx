@@ -1,8 +1,8 @@
-import { useLocation } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
-import PageDescParagraph from "@/components/UI/PageDescParagraph";
-import LetterContainer from "@/components/ReadMyLetter/LetterContainer";
-import LetterButton from "@/components/ReadMyLetter/LetterButton";
+import PageDescParagraph from '@/components/UI/PageDescParagraph';
+import LetterContainer from '@/components/ReadMyLetter/LetterContainer';
+import LetterButton from '@/components/ReadMyLetter/LetterButton';
 
 const ReadMyLetter = () => {
   const location = useLocation();

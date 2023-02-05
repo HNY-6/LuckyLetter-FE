@@ -1,13 +1,13 @@
-import DefaultButton from "@/components/UI/Button";
-import { ArrowBackBtn } from "@/components/button/index.style";
+import DefaultButton from '@/components/UI/Button';
+import { ArrowBackBtn } from '@/components/button/index.style';
 import {
   SelctPocketTitle,
   SelectPocketSpan,
   SelectPocketForm,
-} from "@/components/SelectPocket/index.style";
-import { useNavigate } from "react-router-dom";
-import SelectPocket from "@/components/SelectPocket/SelectPocket";
-import SelectMoney from "@/components/SelectPocket/SelectMoney";
+} from '@/components/SelectPocket/index.style';
+import { useNavigate } from 'react-router-dom';
+import SelectPocket from '@/components/SelectPocket/SelectPocket';
+import SelectMoney from '@/components/SelectPocket/SelectMoney';
 
 const SelectPocketPage = () => {
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ const SelectPocketPage = () => {
       selectPocket: { value: string };
       selectMoney: { value: string };
     };
-    navigate("/writeletter", {
+    navigate('/writeletter', {
       state: {
         pocket: `${target.selectPocket.value}`,
         money: `${target.selectMoney.value}`,

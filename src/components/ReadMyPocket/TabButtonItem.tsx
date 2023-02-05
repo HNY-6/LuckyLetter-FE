@@ -1,9 +1,8 @@
-import TabButtonItemStyle from "./TabButtonItemStyle";
+import TabButtonItemStyle from './TabButtonItemStyle';
 
 interface GlobalLayoutProps {
   children?: React.ReactNode;
   key: string;
-  // onClick: () => void;
 }
 
 const TabButtonItem = (props: GlobalLayoutProps) => {

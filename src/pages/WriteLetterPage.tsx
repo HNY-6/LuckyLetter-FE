@@ -1,10 +1,10 @@
-import { ArrowBackBtn } from "@/components/button/index.style";
+import { ArrowBackBtn } from '@/components/button/index.style';
 import {
   SelctPocketTitle,
   SelectPocketSpan,
   SelectPocketForm,
-} from "@/components/SelectPocket/index.style";
-import DefaultButton from "@/components/UI/Button";
+} from '@/components/SelectPocket/index.style';
+import DefaultButton from '@/components/UI/Button';
 import {
   LetterBox,
   LetterContentParagraph,
@@ -12,8 +12,8 @@ import {
   LetterSenderSpan,
   LetterStamp,
   ReceiverParagraph,
-} from "@/components/WriteLetter/index.style";
-import { useLocation, useNavigate } from "react-router-dom";
+} from '@/components/WriteLetter/index.style';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const WriteLetterPage = () => {
   const location = useLocation();
@@ -37,7 +37,7 @@ const WriteLetterPage = () => {
         </SelctPocketTitle>
         <LetterBox>
           <ReceiverParagraph>To. 달토끼에게</ReceiverParagraph>
-          <LetterContentParagraph placeholder='편지를 입력하세요...'></LetterContentParagraph>
+          <LetterContentParagraph placeholder="편지를 입력하세요..."></LetterContentParagraph>
           <LetterSenderParagraph>
             From. <LetterSenderSpan>익명이</LetterSenderSpan>
           </LetterSenderParagraph>

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ValidationLabelStyle = styled.label`
   display: block;
@@ -24,10 +24,10 @@ export const ValidationInputStyle = styled.input`
 export const ValidationTextStyle = styled.strong`
   font-weight: bold;
   font-size: 16px;
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
 
   &::after {
-    content: "*";
+    content: '*';
     color: var(--warning-color);
   }
 `;

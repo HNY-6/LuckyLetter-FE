@@ -1,4 +1,4 @@
-import PageDescParagraphStyle from "./PageDescParagraphStyle";
+import PageDescParagraphStyle from './PageDescParagraphStyle';
 
 interface GlobalLayoutProps {
   children?: React.ReactNode;
