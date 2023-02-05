@@ -1,4 +1,5 @@
 import {
+  ValidationErrorTextStyle,
   ValidationInputStyle,
   ValidationLabelStyle,
   ValidationTextStyle,
@@ -6,13 +7,16 @@ import {
 
 interface Props {
   label: string;
+  placeholder?: string;
+  errorMessage?: string;
 }
 
-const ValidationInput = ({ label }: Props) => {
+const ValidationInput = ({ label, placeholder, errorMessage }: Props) => {
   return (
     <ValidationLabelStyle>
       <ValidationTextStyle>{label}</ValidationTextStyle>
-      <ValidationInputStyle />
+      <ValidationInputStyle placeholder={placeholder} />
+      <ValidationErrorTextStyle>{errorMessage}</ValidationErrorTextStyle>
     </ValidationLabelStyle>
   );
 };
