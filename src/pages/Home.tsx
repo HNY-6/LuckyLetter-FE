@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import { LogoutBtn, CopyLinkBtn } from '@/components/button/index.style';
-import mainBG from '@/assets/main-BG.png';
+import homeBG from '@/assets/home-bg.png';
 import styled from 'styled-components';
 import DefaultButton from '@/components/UI/Button';
 import DefaultIconStyle from '@/style/DefaultIconStyle';
-import homeMoonIcon from '@/assets/ph_moon-stars-fill.png';
+import homeMoonIcon from '@/assets/icon-moon.png';
 
 // 홈화면 토끼 이미지 부분
 const MainBackgroundImg = styled.img`
@@ -51,7 +51,7 @@ const Home = () => {
           <LogoutBtn as='button' />
         </BtnBox>
       </HomeDisplayBox>
-      <MainBackgroundImg src={mainBG} alt='메인 이미지' />
+      <MainBackgroundImg src={homeBG} alt='메인 이미지' />
       <DefaultButton
         label='받은 복주머니 보러가기'
         styleOverrides={{
