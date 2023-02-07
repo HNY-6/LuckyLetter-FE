@@ -17,16 +17,16 @@ interface MyPocketItemType {
   children?: React.ReactNode;
 }
 
-const MyPocketItem = (props: MyPocketItemType) => {
+const MyPocketItem = ({ id, color, author, isRead }: MyPocketItemType) => {
   return (
-    <Link to={`/mypocket/${props.id}`} state={{ color: props.color }}>
-      <MyPocketItemStyle isRead={props.isRead}>
-        {props.color === 'red' && <PocketRedImg />}
-        {props.color === 'yellow' && <PocketYellowImg />}
-        {props.color === 'orange' && <PocketOrangeImg />}
-        {props.color === 'green' && <PocketGreenImg />}
-        {props.color === 'navy' && <PocketBlueImg />}
-        <span>{props.author}</span>
+    <Link to={`/mypocket/${id}`} state={{ color: color }}>
+      <MyPocketItemStyle isRead={isRead}>
+        {color === 'red' && <PocketRedImg />}
+        {color === 'yellow' && <PocketYellowImg />}
+        {color === 'orange' && <PocketOrangeImg />}
+        {color === 'green' && <PocketGreenImg />}
+        {color === 'navy' && <PocketBlueImg />}
+        <span>{author}</span>
       </MyPocketItemStyle>
     </Link>
   );

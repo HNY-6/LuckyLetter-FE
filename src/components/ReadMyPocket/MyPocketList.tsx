@@ -17,10 +17,10 @@ interface MyPocketListType {
   selectedTabIndex: number;
 }
 
-const MyPocketList = (props: MyPocketListType) => {
+const MyPocketList = ({ selectedTabIndex }: MyPocketListType) => {
   return (
     <MyPocketListStyle>
-      {props.selectedTabIndex === 0 &&
+      {selectedTabIndex === 0 &&
         DUMMY_LIST.map((item) => (
           <MyPocketItem
             key={item.id}
@@ -30,7 +30,7 @@ const MyPocketList = (props: MyPocketListType) => {
             author={item.author}
           />
         ))}
-      {props.selectedTabIndex === 1 &&
+      {selectedTabIndex === 1 &&
         DUMMY_LIST.filter((item) => item.isRead === true).map((item) => (
           <MyPocketItem
             key={item.id}
@@ -40,7 +40,7 @@ const MyPocketList = (props: MyPocketListType) => {
             author={item.author}
           />
         ))}
-      {props.selectedTabIndex === 2 &&
+      {selectedTabIndex === 2 &&
         DUMMY_LIST.filter((item) => item.isRead === false).map((item) => (
           <MyPocketItem
             key={item.id}
