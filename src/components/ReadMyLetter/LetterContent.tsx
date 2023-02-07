@@ -29,13 +29,16 @@ const LetterContentParagraph = styled.p`
   -webkit-line-clamp: 9;
 `;
 
-const LetterFromParagraph = styled.p`
+const LetterFromBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5px;
   justify-self: flex-end;
   align-self: flex-end;
+`;
+
+const LetterFromParagraph = styled.p`
   font-size: 12px;
   font-weight: bold;
 
@@ -54,14 +57,16 @@ const LetterContent = ({ color }: { color: string }) => {
         cumque possimus porro veniam voluptate ea consequatur perspiciatis illo
         nesciunt hic! Ipsum?
       </LetterContentParagraph>
-      <LetterFromParagraph color={color}>
-        From.<span>(발신자)</span>
+      <LetterFromBox>
+        <LetterFromParagraph color={color}>
+          From.<span>(발신자)</span>
+        </LetterFromParagraph>
         {color === 'red' && <DogRedStampImg />}
         {color === 'orange' && <DogOrangeStampImg />}
         {color === 'yellow' && <DogYellowStampImg />}
         {color === 'green' && <DogGreenStampImg />}
         {color === 'navy' && <DogWhiteStampImg />}
-      </LetterFromParagraph>
+      </LetterFromBox>
     </LetterGridBox>
   );
 };
