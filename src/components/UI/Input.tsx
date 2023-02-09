@@ -1,3 +1,4 @@
+import { UseFormRegisterReturn } from 'react-hook-form';
 import { CSSProperties } from 'styled-components';
 import {
   ValidationErrorTextStyle,
@@ -8,22 +9,24 @@ import {
 } from './InputStyle';
 
 interface Props {
+  type?: string;
   label: string;
   placeholder?: string;
   errorMessage?: string;
   styleOverrides?: CSSProperties;
   asterisk: boolean;
+  register?: UseFormRegisterReturn;
 }
 
 const ValidationInput = ({
+  type,
   label,
   placeholder,
   errorMessage,
   styleOverrides,
   asterisk,
+  register,
 }: Props) => {
-  console.log(asterisk);
-
   return (
     <ValidationLabelStyle>
       {asterisk ? (
@@ -31,7 +34,11 @@ const ValidationInput = ({
       ) : (
         <ValidationTextStyle>{label}</ValidationTextStyle>
       )}
-      <ValidationInputStyle placeholder={placeholder} />
+      <ValidationInputStyle
+        {...register}
+        type={type}
+        placeholder={placeholder}
+      />
       <ValidationErrorTextStyle styleOverrides={styleOverrides}>
         {errorMessage}
       </ValidationErrorTextStyle>
