@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import * as S from './styles/ReadMyPocket.styled';
+
 import TabButtonItem from './TabButtonItem';
-import TabButtonListStyle from './TabButtonListStyle';
 
 const tabMenuTitle = [
   {
@@ -38,7 +39,7 @@ const TabButtonList = ({ getSelectedIndex }: TabButtonListType) => {
     );
   });
 
-  return <TabButtonListStyle>{tabMenuButtons}</TabButtonListStyle>;
+  return <S.TabButtonList>{tabMenuButtons}</S.TabButtonList>;
 };
 
 export default TabButtonList;
