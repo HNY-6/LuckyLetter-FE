@@ -1,4 +1,4 @@
-import MyPocketListStyle from './MyPocketListStyle';
+import * as S from './styles/ReadMyPocket.styled';
 import MyPocketItem from './MyPocketItem';
 
 const DUMMY_LIST = [
@@ -19,7 +19,7 @@ interface MyPocketListType {
 
 const MyPocketList = ({ selectedTabIndex }: MyPocketListType) => {
   return (
-    <MyPocketListStyle>
+    <S.MyPocketList>
       {selectedTabIndex === 0 &&
         DUMMY_LIST.map((item) => (
           <MyPocketItem
@@ -50,7 +50,7 @@ const MyPocketList = ({ selectedTabIndex }: MyPocketListType) => {
             author={item.author}
           />
         ))}
-    </MyPocketListStyle>
+    </S.MyPocketList>
   );
 };
 

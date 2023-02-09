@@ -1,11 +1,11 @@
-import TabButtonItemStyle from './TabButtonItemStyle';
+import * as S from './styles/ReadMyPocket.styled';
 
 interface GlobalLayoutProps {
   children?: React.ReactNode;
 }
 
 const TabButtonItem = ({ children }: GlobalLayoutProps) => {
-  return <TabButtonItemStyle>{children}</TabButtonItemStyle>;
+  return <S.TabButtonItem>{children}</S.TabButtonItem>;
 };
 
 export default TabButtonItem;
