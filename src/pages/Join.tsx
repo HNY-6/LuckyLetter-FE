@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import TitleLogo from '@/assets/common-title.png';
 import DefaultButton from '@/components/UI/Button';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { ValidationErrorTextStyle } from '@/components/UI/InputStyle';
 
 const MainCharacter = styled.div`
   display: flex;
@@ -30,12 +31,14 @@ interface FormInput {
 }
 
 const Join = () => {
-  const { register, handleSubmit, watch } = useForm<FormInput>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormInput>();
   const onSubmit: SubmitHandler<FormInput> = (data) => {
     console.log(data);
   };
-
-  console.log(watch());
 
   return (
     <>
@@ -44,33 +47,49 @@ const Join = () => {
       </MainCharacter>
       <form onSubmit={handleSubmit(onSubmit)}>
         <ValidationInput
-          register={register('userName')}
+          register={register('userName', { required: '이름을 입력해 주세요.' })}
           label={'이름'}
           placeholder={'이름'}
-          errorMessage={'에러메시지 테스트'}
           asterisk={true}
         />
+        <ValidationErrorTextStyle>
+          {errors.userName && errors.userName.message}
+        </ValidationErrorTextStyle>
         <ValidationInput
-          register={register('userEmail')}
+          register={register('userEmail', {
+            required: '이메일을 입력해 주세요.',
+          })}
           label={'이메일'}
           placeholder={'example@example.com'}
           asterisk={true}
         />
+        <ValidationErrorTextStyle>
+          {errors.userEmail && errors.userEmail.message}
+        </ValidationErrorTextStyle>
         <ValidationInput
-          register={register('userPassword')}
+          register={register('userPassword', {
+            required: '비밀번호를 입력해 주세요.',
+          })}
           type={'password'}
           label={'비밀번호'}
           placeholder={'********'}
           asterisk={true}
         />
+        <ValidationErrorTextStyle>
+          {errors.userPassword && errors.userPassword.message}
+        </ValidationErrorTextStyle>
         <ValidationInput
-          register={register('userPasswordConfirm')}
+          register={register('userPasswordConfirm', {
+            required: '비밀번호를 확인해 주세요.',
+          })}
           type={'password'}
           label={'비밀번호 확인'}
           placeholder={'********'}
           asterisk={true}
         />
-
+        <ValidationErrorTextStyle>
+          {errors.userPasswordConfirm && errors.userPasswordConfirm.message}
+        </ValidationErrorTextStyle>
         <DefaultButton styleOverrides={joinLoginStyle} label={'회원가입'} />
       </form>
     </>

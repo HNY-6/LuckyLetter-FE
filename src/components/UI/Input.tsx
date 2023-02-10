@@ -12,7 +12,6 @@ interface Props {
   type?: string;
   label: string;
   placeholder?: string;
-  errorMessage?: string;
   styleOverrides?: CSSProperties;
   asterisk: boolean;
   register?: UseFormRegisterReturn;
@@ -22,7 +21,6 @@ const ValidationInput = ({
   type,
   label,
   placeholder,
-  errorMessage,
   styleOverrides,
   asterisk,
   register,
@@ -39,9 +37,6 @@ const ValidationInput = ({
         type={type}
         placeholder={placeholder}
       />
-      <ValidationErrorTextStyle styleOverrides={styleOverrides}>
-        {errorMessage}
-      </ValidationErrorTextStyle>
     </ValidationLabelStyle>
   );
 };
