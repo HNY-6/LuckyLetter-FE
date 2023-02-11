@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import button from "@/assets/common-btn_sprites.png";
+import styled from 'styled-components';
+import button from '@/assets/common-btn_sprites.png';
 
 // Pocket
 export const PocketProperty = styled.div`
@@ -9,15 +9,15 @@ export const PocketProperty = styled.div`
   position: relative;
   ${(props) => {
     switch (props.color) {
-      case "redPocket":
+      case 'redPocket':
         return `background: url(${button}) -10px -101px`;
-      case "bluePocket":
+      case 'bluePocket':
         return `background: url(${button}) -210px -10px`;
-      case "greenPocket":
+      case 'greenPocket':
         return `background: url(${button}) -110px -101px`;
-      case "yellowPocket":
+      case 'yellowPocket':
         return `background: url(${button}) -110px -10px;`;
-      case "orangePocket":
+      case 'orangePocket':
         return `background: url(${button}) -10px -10px;`;
     }
   }}
@@ -52,15 +52,15 @@ export const MoneyProperty = styled.div`
   position: relative;
   ${(props) => {
     switch (props.color) {
-      case "1000won":
+      case '1000won':
         return `background: url(${button}) -310px -150px`;
-      case "5000won":
+      case '5000won':
         return `background: url(${button}) -310px -80px`;
-      case "10000won":
+      case '10000won':
         return `background: url(${button}) -130px -192px`;
-      case "50000won":
+      case '50000won':
         return `background: url(${button}) -310px -10px`;
-      case "none":
+      case 'none':
         return `background: url(${button}) -10px -192px`;
     }
   }}
