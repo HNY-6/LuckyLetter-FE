@@ -1,10 +1,10 @@
-import { ArrowBackBtn } from "@/components/button/index.style";
+import { ArrowBackBtn } from '@/components/button/index.style';
 import {
   SelctPocketTitle,
   SelectPocketSpan,
   SelectPocketForm,
-} from "@/components/SelectPocket/index.style";
-import DefaultButton from "@/components/UI/Button";
+} from '@/components/SelectPocket/index.style';
+import DefaultButton from '@/components/UI/Button';
 import {
   LetterBox,
   LetterContentParagraph,
@@ -12,9 +12,9 @@ import {
   LetterSenderSpan,
   LetterStamp,
   ReceiverParagraph,
-} from "@/components/WriteLetter/index.style";
-import { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+} from '@/components/WriteLetter/index.style';
+import { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const WriteLetterPage = () => {
   const location = useLocation();
@@ -24,7 +24,7 @@ const WriteLetterPage = () => {
   console.log(messageColor, money);
 
   useEffect(() => {
-    if (!location.state) navigate("/selectpocket");
+    if (!location.state) navigate('/selectpocket');
   });
 
   const onSubmit = (e: React.SyntheticEvent) => {
@@ -36,7 +36,16 @@ const WriteLetterPage = () => {
   return (
     <>
       <SelectPocketForm onSubmit={onSubmit}>
-        <ArrowBackBtn onClick={() => navigate(-1)} />
+        <ArrowBackBtn
+          onClick={() =>
+            navigate('/selectpocket', {
+              state: {
+                pocket: `${messageColor}`,
+                money: `${money}`,
+              },
+            })
+          }
+        />
         <SelctPocketTitle>
           <SelectPocketSpan>진심을 담은 편지</SelectPocketSpan>를<br />
           써주세요!
