@@ -1,7 +1,14 @@
 import * as S from './styles/ReadMyPocket.styled';
-import MyPocketItem from './MyPocketItem';
+import MyPocketItems from './MyPocketItems';
 
-const DUMMY_LIST = [
+type DUMMY_LIST_TYPE = {
+  id: number;
+  color: string;
+  author: string;
+  isRead: boolean;
+}[];
+
+const DUMMY_LIST: DUMMY_LIST_TYPE = [
   { id: 1, color: 'red', author: '김성훈', isRead: true },
   { id: 2, color: 'orange', author: '김수현', isRead: false },
   { id: 3, color: 'yellow', author: '추경훈', isRead: true },
@@ -20,36 +27,21 @@ interface MyPocketListType {
 const MyPocketList = ({ selectedTabIndex }: MyPocketListType) => {
   return (
     <S.MyPocketList>
-      {selectedTabIndex === 0 &&
-        DUMMY_LIST.map((item) => (
-          <MyPocketItem
-            key={item.id}
-            id={item.id}
-            isRead={item.isRead}
-            color={item.color}
-            author={item.author}
-          />
-        ))}
-      {selectedTabIndex === 1 &&
-        DUMMY_LIST.filter((item) => item.isRead === true).map((item) => (
-          <MyPocketItem
-            key={item.id}
-            id={item.id}
-            isRead={item.isRead}
-            color={item.color}
-            author={item.author}
-          />
-        ))}
-      {selectedTabIndex === 2 &&
-        DUMMY_LIST.filter((item) => item.isRead === false).map((item) => (
-          <MyPocketItem
-            key={item.id}
-            id={item.id}
-            isRead={item.isRead}
-            color={item.color}
-            author={item.author}
-          />
-        ))}
+      {selectedTabIndex === 0 && (
+        <MyPocketItems tabIndex={selectedTabIndex} pocketData={DUMMY_LIST} />
+      )}
+      {selectedTabIndex === 1 && (
+        <MyPocketItems
+          tabIndex={selectedTabIndex}
+          pocketData={DUMMY_LIST.filter((item) => item.isRead !== false)}
+        />
+      )}
+      {selectedTabIndex === 2 && (
+        <MyPocketItems
+          tabIndex={selectedTabIndex}
+          pocketData={DUMMY_LIST.filter((item) => item.isRead === false)}
+        />
+      )}
     </S.MyPocketList>
   );
 };
