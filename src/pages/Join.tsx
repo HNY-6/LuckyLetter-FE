@@ -20,8 +20,13 @@ const TitleImg = styled.img`
   margin-top: 104px;
 `;
 
-const joinLoginStyle = {
+const activeLoginBtnStyle = {
   marginTop: '60px',
+};
+
+const disabledLoginBtnStyle = {
+  marginTop: '60px',
+  backgroundColor: '#D9D9D9',
 };
 
 interface FormInput {
@@ -36,8 +41,8 @@ const Join = () => {
     register,
     handleSubmit,
     watch,
-    formState: { errors },
-  } = useForm<FormInput>();
+    formState: { errors, isDirty },
+  } = useForm<FormInput>({ mode: 'onChange' });
 
   const onSubmit: SubmitHandler<FormInput> = (data) => {
     console.log(data);
@@ -45,8 +50,6 @@ const Join = () => {
 
   const passwordInput = useRef<string | null>(null);
   passwordInput.current = watch('userPassword');
-
-  console.log(errors);
 
   return (
     <>
@@ -118,7 +121,17 @@ const Join = () => {
         <ValidationErrorTextStyle>
           {errors.userPasswordConfirm && '비밀번호를 확인해 주세요.'}
         </ValidationErrorTextStyle>
-        <DefaultButton styleOverrides={joinLoginStyle} label={'회원가입'} />
+        {!isDirty ? (
+          <DefaultButton
+            styleOverrides={disabledLoginBtnStyle}
+            label={'회원가입'}
+          />
+        ) : (
+          <DefaultButton
+            styleOverrides={activeLoginBtnStyle}
+            label={'회원가입'}
+          />
+        )}
       </form>
     </>
   );
