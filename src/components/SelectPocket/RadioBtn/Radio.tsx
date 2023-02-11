@@ -14,7 +14,7 @@ export const Radio = (props: SelectPocketType) => {
   return (
     <RadioLabel>
       <RadioInput
-        type="radio"
+        type='radio'
         value={props.value}
         defaultChecked={props.defaultChecked}
         name={props.name}
@@ -23,7 +23,7 @@ export const Radio = (props: SelectPocketType) => {
         }
         onChange={(e) => group.onChange && group.onChange(e.target.value)}
       />
-      {props.name == 'selectPocket' ? (
+      {props.name === 'selectPocket' ? (
         <PocketProperty color={props.value} />
       ) : (
         <MoneyProperty color={props.value} />

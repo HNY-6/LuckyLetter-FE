@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { SelectPocketFieldSet } from '@/components/SelectPocket/index.style';
 import { Radio } from '@/components/SelectPocket/RadioBtn/Radio';
 import { RadioGroup } from '@/components/SelectPocket/RadioBtn/RadioGroup';
@@ -17,13 +17,14 @@ const SelectPocket = () => {
   return (
     <SelectPocketFieldSet>
       <RadioGroup
-        label="복주머니 선택"
+        label='복주머니 선택'
         value={pocketValue}
-        onChange={setPocketValue}>
+        onChange={setPocketValue}
+      >
         {POCKET_LIST.map((item) => (
           <Radio
             key={item.value}
-            name="selectPocket"
+            name='selectPocket'
             value={item.value}
             defaultChecked={item.check}
           />

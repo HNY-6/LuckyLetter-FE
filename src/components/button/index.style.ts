@@ -88,7 +88,7 @@ export const Money50000Img = styled(MoneyProperty)`
 
 // 개발바닥
 
-const DogStampProperty = styled.div`
+export const DogStampProperty = styled.div`
   width: 42px;
   height: 42px;
 `;
