@@ -4,15 +4,20 @@ import { Radio } from '@/components/SelectPocket/RadioBtn/Radio';
 import { RadioGroup } from '@/components/SelectPocket/RadioBtn/RadioGroup';
 
 const POCKET_LIST = [
-  { value: 'redPocket', check: true },
+  { value: 'redPocket', check: false },
   { value: 'bluePocket', check: false },
   { value: 'greenPocket', check: false },
   { value: 'yellowPocket', check: false },
   { value: 'orangePocket', check: false },
 ];
 
-const SelectPocket = () => {
+const SelectPocket = (pocket: { pocket: string }) => {
   const [pocketValue, setPocketValue] = useState('redPocket');
+
+  POCKET_LIST.map((i: { value: string; check: boolean }) => {
+    if (i.value === pocket.pocket) return (i.check = true);
+    return (i.check = false);
+  });
 
   return (
     <SelectPocketFieldSet>

@@ -5,12 +5,13 @@ import {
   SelectPocketSpan,
   SelectPocketForm,
 } from '@/components/SelectPocket/index.style';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import SelectPocket from '@/components/SelectPocket/SelectPocket';
 import SelectMoney from '@/components/SelectPocket/SelectMoney';
 
 const SelectPocketPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const onSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     const target = e.target as typeof e.target & {
@@ -32,8 +33,10 @@ const SelectPocketPage = () => {
           <SelectPocketSpan>복주머니</SelectPocketSpan>와
           <SelectPocketSpan> 세뱃돈</SelectPocketSpan>을<br /> 선택해주세요!
         </SelctPocketTitle>
-        <SelectPocket />
-        <SelectMoney />
+        <SelectPocket
+          pocket={location.state ? location.state.pocket : 'redPocket'}
+        />
+        <SelectMoney money={location.state ? location.state.money : 'none'} />
         <DefaultButton label={`다음`} />
       </SelectPocketForm>
     </>

@@ -11,20 +11,28 @@ const MONEY_LIST = [
   { value: 'none', check: true },
 ];
 
-const SelectMoney = () => {
-  const [moneyValue, setMoneyValue] = useState('1000');
+const SelectMoney = (money: { money: string }) => {
+  const [moneyValue, setMoneyValue] = useState('none');
+
+  MONEY_LIST.map((i: { value: string; check: boolean }) => {
+    if (i.value === money.money) return (i.check = true);
+    else return (i.check = false);
+  });
+
   return (
     <SelectMoneyFieldSet>
       <RadioGroup
-        label="세뱃돈 선택"
+        label='세뱃돈 선택'
         value={moneyValue}
-        onChange={setMoneyValue}>
+        onChange={setMoneyValue}
+      >
         {MONEY_LIST.map((item) => (
           <Radio
             key={item.value}
-            name="selectMoney"
+            name='selectMoney'
             value={item.value}
-            defaultChecked={item.check}></Radio>
+            defaultChecked={item.check}
+          ></Radio>
         ))}
       </RadioGroup>
     </SelectMoneyFieldSet>
