@@ -12,14 +12,13 @@ const POCKET_LIST = [
 ];
 
 const SelectPocket = (pocket: { pocket: string }) => {
-  const [pocketValue, setPocketValue] = useState(
-    pocket.pocket !== 'redPocket' ? pocket.pocket : 'redPocket'
-  );
-  pocket.pocket !== 'redPocket'
-    ? POCKET_LIST.map((i: { value: string; check: boolean }) => {
-        if (i.value === pocket.pocket) i.check = true;
-      })
-    : (POCKET_LIST[0].check = true);
+  const [pocketValue, setPocketValue] = useState('redPocket');
+
+  POCKET_LIST.map((i: { value: string; check: boolean }) => {
+    if (i.value === pocket.pocket) return (i.check = true);
+    return (i.check = false);
+  });
+
   return (
     <SelectPocketFieldSet>
       <RadioGroup

@@ -25,7 +25,6 @@ const SelectPocketPage = () => {
       },
     });
   };
-  console.log(location.state);
   return (
     <>
       <SelectPocketForm onSubmit={onSubmit}>
@@ -37,7 +36,7 @@ const SelectPocketPage = () => {
         <SelectPocket
           pocket={location.state ? location.state.pocket : 'redPocket'}
         />
-        <SelectMoney />
+        <SelectMoney money={location.state ? location.state.money : 'none'} />
         <DefaultButton label={`다음`} />
       </SelectPocketForm>
     </>
