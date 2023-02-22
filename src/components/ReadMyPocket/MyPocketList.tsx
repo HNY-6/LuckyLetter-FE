@@ -3,21 +3,21 @@ import MyPocketItems from './MyPocketItems';
 
 type DUMMY_LIST_TYPE = {
   id: number;
-  color: string;
-  author: string;
-  isRead: boolean;
+  pocket: string;
+  senderNickname: string;
+  status: string;
 }[];
 
 const DUMMY_LIST: DUMMY_LIST_TYPE = [
-  { id: 1, color: 'red', author: '김성훈', isRead: true },
-  { id: 2, color: 'orange', author: '김수현', isRead: false },
-  { id: 3, color: 'yellow', author: '추경훈', isRead: true },
-  { id: 4, color: 'green', author: '익명이', isRead: false },
-  { id: 5, color: 'navy', author: '안상언', isRead: true },
-  { id: 6, color: 'red', author: '정수연', isRead: true },
-  { id: 7, color: 'red', author: '김성훈', isRead: false },
-  { id: 8, color: 'red', author: '김수현', isRead: true },
-  { id: 9, color: 'red', author: '추경훈', isRead: false },
+  { id: 1, pocket: 'red', senderNickname: '김성훈', status: 'READ' },
+  { id: 2, pocket: 'orange', senderNickname: '김수현', status: 'UNREAD' },
+  { id: 3, pocket: 'yellow', senderNickname: '추경훈', status: 'READ' },
+  { id: 4, pocket: 'green', senderNickname: '익명이', status: 'UNREAD' },
+  { id: 5, pocket: 'navy', senderNickname: '안상언', status: 'READ' },
+  { id: 6, pocket: 'red', senderNickname: '정수연', status: 'READ' },
+  { id: 7, pocket: 'red', senderNickname: '김성훈', status: 'UNREAD' },
+  { id: 8, pocket: 'red', senderNickname: '김수현', status: 'READ' },
+  { id: 9, pocket: 'red', senderNickname: '추경훈', status: 'UNREAD' },
 ];
 
 interface MyPocketListType {
@@ -33,13 +33,13 @@ const MyPocketList = ({ selectedTabIndex }: MyPocketListType) => {
       {selectedTabIndex === 1 && (
         <MyPocketItems
           tabIndex={selectedTabIndex}
-          pocketData={DUMMY_LIST.filter((item) => item.isRead !== false)}
+          pocketData={DUMMY_LIST.filter((item) => item.status === 'READ')}
         />
       )}
       {selectedTabIndex === 2 && (
         <MyPocketItems
           tabIndex={selectedTabIndex}
-          pocketData={DUMMY_LIST.filter((item) => item.isRead === false)}
+          pocketData={DUMMY_LIST.filter((item) => item.status === 'UNREAD')}
         />
       )}
     </S.MyPocketList>

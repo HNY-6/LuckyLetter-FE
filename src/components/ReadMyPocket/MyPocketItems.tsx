@@ -4,9 +4,9 @@ type MyPocketItemsProps = {
   tabIndex: number;
   pocketData: {
     id: number;
-    color: string;
-    author: string;
-    isRead: boolean;
+    pocket: string;
+    senderNickname: string;
+    status: string;
   }[];
 };
 
@@ -30,9 +30,9 @@ const MyPocketItems = ({ tabIndex, pocketData }: MyPocketItemsProps) => {
           <MyPocketItem
             key={item.id}
             id={item.id}
-            color={item.color}
-            author={item.author}
-            isRead={item.isRead}
+            pocket={item.pocket}
+            senderNickname={item.senderNickname}
+            status={item.status}
           />
         ))}
     </>
