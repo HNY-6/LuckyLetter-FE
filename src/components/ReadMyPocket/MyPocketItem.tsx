@@ -10,22 +10,27 @@ import { Link } from 'react-router-dom';
 
 interface MyPocketItemType {
   id: number;
-  color: string;
-  author: string;
-  isRead: boolean;
+  pocket: string;
+  senderNickname: string;
+  status: string;
   children?: React.ReactNode;
 }
 
-const MyPocketItem = ({ id, color, author, isRead }: MyPocketItemType) => {
+const MyPocketItem = ({
+  id,
+  pocket,
+  senderNickname,
+  status,
+}: MyPocketItemType) => {
   return (
-    <Link to={`/mypocket/${id}`} state={{ color: color }}>
-      <S.MyPocketItem isRead={isRead}>
-        {color === 'red' && <PocketRedImg />}
-        {color === 'yellow' && <PocketYellowImg />}
-        {color === 'orange' && <PocketOrangeImg />}
-        {color === 'green' && <PocketGreenImg />}
-        {color === 'navy' && <PocketBlueImg />}
-        <span>{author}</span>
+    <Link to={`/mypocket/${id}`} state={{ pocket: pocket }}>
+      <S.MyPocketItem status={status}>
+        {pocket === 'red' && <PocketRedImg />}
+        {pocket === 'yellow' && <PocketYellowImg />}
+        {pocket === 'orange' && <PocketOrangeImg />}
+        {pocket === 'green' && <PocketGreenImg />}
+        {pocket === 'navy' && <PocketBlueImg />}
+        <span>{senderNickname}</span>
       </S.MyPocketItem>
     </Link>
   );

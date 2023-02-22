@@ -10,7 +10,7 @@ export const MyPocketList = styled.ul`
 `;
 
 // 복주머니 리스트 아이템
-export const MyPocketItem = styled.li<{ isRead: boolean }>`
+export const MyPocketItem = styled.li<{ status: string }>`
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@ export const MyPocketItem = styled.li<{ isRead: boolean }>`
 
   & div {
     ${(props) =>
-      props.isRead &&
+      props.status === 'READ' &&
       css`
         filter: grayscale(80%);
       `}
