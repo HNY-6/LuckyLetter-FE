@@ -1,3 +1,4 @@
+import { Colors } from '@/style/GlobalColors';
 import styled, { CSSProperties } from 'styled-components';
 
 export const DefaultButtonStyle = styled.button<{
@@ -9,7 +10,7 @@ export const DefaultButtonStyle = styled.button<{
   height: 50px;
   border-radius: 12px;
   font-size: 16px;
-  color: var(--bg-color);
+  color: ${Colors.bgColor};
   background-color: var(--main-color);
   ${({ styleOverrides }) => ({ ...styleOverrides })};
 `;
