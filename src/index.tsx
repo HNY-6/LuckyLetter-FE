@@ -10,14 +10,17 @@ const GlobalStyle = createGlobalStyle`
   li {
     list-style: none;
   }
+
   a {
     text-decoration : none;
     color : inherit;
   }
 
   button {
-    border : none;
-    cursor : pointer;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    background-color: inherit;
   }
 
   * {
@@ -31,13 +34,6 @@ const GlobalStyle = createGlobalStyle`
   img {
     width: 100%;
     height: auto;
-  }
-
-  button {
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    background-color: inherit;
   }
 
   input {
