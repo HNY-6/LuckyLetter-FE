@@ -5,6 +5,8 @@ import TitleLogo from '@/assets/common-title.png';
 import DefaultButton from '@/components/UI/Button';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { ValidationErrorTextStyle } from '@/components/UI/InputStyle';
+import { useMutation, useQuery } from '@tanstack/react-query';
+import { registerUser } from '@/api/auth';
 
 const MainCharacter = styled.div`
   display: flex;
@@ -37,6 +39,10 @@ interface FormInput {
 }
 
 const Join = () => {
+  const { data, isLoading, mutate, mutateAsync } = useMutation(registerUser);
+
+  console.log(data);
+
   const {
     register,
     handleSubmit,
