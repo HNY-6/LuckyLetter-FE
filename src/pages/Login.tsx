@@ -4,6 +4,8 @@ import TitleLogo from '@/assets/common-title.png';
 import DefaultButton from '@/components/UI/Button';
 import { ValidationErrorTextStyle } from '@/components/UI/InputStyle';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useMutation, useQuery } from '@tanstack/react-query';
+import { LoginUser } from '@/api/auth';
 
 const MainCharacter = styled.div`
   display: flex;
@@ -33,14 +35,16 @@ interface FormInput {
 }
 
 const Login = () => {
+  const { data, isLoading, mutate, mutateAsync } = useMutation(LoginUser);
+
   const {
     register,
     handleSubmit,
     formState: { errors, isDirty },
   } = useForm<FormInput>({ mode: 'onChange' });
 
-  const onSubmit: SubmitHandler<FormInput> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<FormInput> = (formData) => {
+    mutate(formData);
   };
 
   return (
