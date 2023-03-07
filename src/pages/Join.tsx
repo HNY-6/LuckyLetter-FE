@@ -41,8 +41,6 @@ interface FormInput {
 const Join = () => {
   const { data, isLoading, mutate, mutateAsync } = useMutation(registerUser);
 
-  console.log(data);
-
   const {
     register,
     handleSubmit,
@@ -51,7 +49,7 @@ const Join = () => {
   } = useForm<FormInput>({ mode: 'onChange' });
 
   const onSubmit: SubmitHandler<FormInput> = (data) => {
-    console.log(data);
+    mutate(data);
   };
 
   const passwordInput = useRef<string | null>(null);
