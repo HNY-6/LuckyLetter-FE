@@ -48,8 +48,8 @@ const Join = () => {
     formState: { errors, isDirty },
   } = useForm<FormInput>({ mode: 'onChange' });
 
-  const onSubmit: SubmitHandler<FormInput> = (data) => {
-    mutate(data);
+  const onSubmit: SubmitHandler<FormInput> = (formData) => {
+    mutate(formData);
   };
 
   const passwordInput = useRef<string | null>(null);
