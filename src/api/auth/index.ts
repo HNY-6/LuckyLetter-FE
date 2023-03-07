@@ -13,8 +13,10 @@ export const registerUser = async (formData: RegisterValues) => {
 };
 
 export const LoginUser = async (formData: LoginValues) => {
-  const response = await axiosBaseURL.post('/api/users/login', {
+  const { data } = await axiosBaseURL.post('/api/users/login', {
     email: formData.userEmail,
     password: formData.userPassword,
   });
+  console.log(data);
+  return data;
 };
