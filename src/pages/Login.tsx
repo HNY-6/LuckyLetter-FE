@@ -6,6 +6,7 @@ import { ValidationErrorTextStyle } from '@/components/UI/InputStyle';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { LoginUser } from '@/api/auth';
+import { emailRegEx } from '@/utils/regex';
 
 const MainCharacter = styled.div`
   display: flex;
@@ -57,7 +58,7 @@ const Login = () => {
           register={register('userEmail', {
             required: '이메일을 입력해 주세요.',
             pattern: {
-              value: /^\S+@\S+$/i,
+              value: emailRegEx,
               message: '이메일 형식이 올바르지 않습니다.',
             },
           })}
