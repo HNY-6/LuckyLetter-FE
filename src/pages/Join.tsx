@@ -7,6 +7,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { ValidationErrorTextStyle } from '@/components/UI/InputStyle';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { registerUser } from '@/api/auth';
+import { emailRegEx, passwordRegEx } from '@/utils/regex';
 
 const MainCharacter = styled.div`
   display: flex;
@@ -84,7 +85,7 @@ const Join = () => {
           register={register('userEmail', {
             required: '이메일을 입력해 주세요.',
             pattern: {
-              value: /^\S+@\S+$/i,
+              value: emailRegEx,
               message: '이메일 형식이 올바르지 않습니다.',
             },
           })}
@@ -99,8 +100,7 @@ const Join = () => {
           register={register('userPassword', {
             required: '비밀번호를 입력해 주세요.',
             pattern: {
-              value:
-                /^(?=.*?[a-z])(?=.*?[A-Z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,16}$/,
+              value: passwordRegEx,
               message: '8~16자 영문 대 소문자, 숫자, 특수문자를 사용하세요.',
             },
           })}
